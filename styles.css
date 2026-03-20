@@ -34,6 +34,39 @@ a {
   max-width: 1180px;
   margin: 0 auto;
   padding: 28px 20px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.ambient-one {
+  width: 280px;
+  height: 280px;
+  background: rgba(15, 118, 110, 0.08);
+  top: 110px;
+  right: -80px;
+}
+
+.ambient-two {
+  width: 240px;
+  height: 240px;
+  background: rgba(217, 119, 6, 0.08);
+  top: 780px;
+  left: -110px;
+}
+
+.ambient-three {
+  width: 180px;
+  height: 180px;
+  background: rgba(29, 78, 216, 0.08);
+  top: 1500px;
+  right: 40px;
 }
 
 .topbar {
@@ -130,6 +163,34 @@ li {
   font-size: 1.05rem;
 }
 
+.signal-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.signal-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+}
+
+.signal-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+}
+
+.signal-card strong {
+  font-size: 0.95rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -210,6 +271,21 @@ li {
   line-height: 1.15;
 }
 
+.focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.focus-list span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
 .card-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -234,6 +310,31 @@ li {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.availability-panel {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.availability-panel p {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.92rem;
+}
+
+.availability-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 5px;
+  background: #86efac;
+  box-shadow: 0 0 0 6px rgba(134, 239, 172, 0.14);
+}
+
 main {
   margin-top: 42px;
 }
@@ -255,6 +356,50 @@ h2 {
 .panel,
 .contact-panel {
   padding: 26px;
+}
+
+.highlight-grid,
+.capability-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.highlight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.highlight-card,
+.capability-card {
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.highlight-card {
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 247, 240, 0.96));
+}
+
+.highlight-kicker {
+  margin: 0 0 8px;
+  color: var(--brand-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.highlight-card h3,
+.capability-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.highlight-card p,
+.capability-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .panel p {
@@ -295,6 +440,24 @@ h2 {
 
 .badge-strip {
   margin-top: 16px;
+}
+
+.capability-grid {
+  grid-template-columns: 1.15fr 1fr 1fr;
+}
+
+.capability-card {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.capability-primary {
+  background: linear-gradient(180deg, rgba(15, 118, 110, 0.96), rgba(17, 24, 39, 0.96));
+  color: #fff;
+}
+
+.capability-primary p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .two-col {
@@ -346,9 +509,16 @@ ul {
   font-weight: 600;
 }
 
+.accent-panel {
+  background: linear-gradient(180deg, rgba(255, 250, 240, 0.98), rgba(255, 255, 255, 0.94));
+  border-style: dashed;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
-  .two-col {
+  .two-col,
+  .highlight-grid,
+  .capability-grid {
     grid-template-columns: 1fr;
   }
 
@@ -359,6 +529,10 @@ ul {
 
   h1 {
     max-width: none;
+  }
+
+  .signal-bar {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -383,5 +557,12 @@ ul {
 
   .logo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .badge-row,
+  .badge-strip,
+  .contact-links,
+  .focus-list {
+    gap: 10px;
   }
 }
