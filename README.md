@@ -1,118 +1,98 @@
 # Hi, I'm Anish Vishwakarma
 
-Software Engineer with 5+ years of experience building backend systems, cloud-native services, and data-driven products. I work primarily with Java, Spring Boot, microservices, and Google Cloud, and I enjoy building reliable systems that scale.
+<p align="center">
+  <strong>Software Engineer | Java | Spring Boot | Microservices | GCP</strong>
+</p>
 
-[LinkedIn](https://www.linkedin.com/in/anishvish) | [Email](mailto:anishvish5@gmail.com) | [Detailed Resume](./RESUME.md)
+<p align="center">
+  Backend-focused engineer with 5+ years of experience building cloud-native products, enterprise integrations, and data-intensive systems.
+</p>
 
-## About Me
+<p align="center">
+  <a href="mailto:anishvish5@gmail.com"><img src="https://img.shields.io/badge/Email-anishvish5%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/anishvish"><img src="https://img.shields.io/badge/LinkedIn-Anish%20Vishwakarma-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://github.com/Anishvish/anishvish/blob/main/RESUME.md"><img src="https://img.shields.io/badge/Resume-View%20Profile%20Resume-1F6FEB?style=for-the-badge&logo=readme&logoColor=white" alt="Resume" /></a>
+</p>
 
-- 5+ years of professional experience in software engineering
-- Strong backend focus with Java, Spring Boot, J2EE, Hibernate, and microservices
-- Hands-on experience with Google Cloud Platform, Kubernetes, Docker, Pub/Sub, BigQuery, Firestore, and Bigtable
-- Built enterprise integrations, batch processing systems, and connected vehicle platforms
-- Familiar with AI-assisted developer workflows using GitHub Copilot, Antigravity, and Codex
-- Comfortable working in agile teams with Jira, Confluence, Jenkins, Maven, and Git-based workflows
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=anishvish&label=Profile%20Views&color=0f766e&style=flat" alt="profile views" />
+</p>
 
-## What I Work On
+## Professional Snapshot
 
-I build systems that connect applications, move data reliably, and expose business-critical services through clean APIs. My recent work has included employee onboarding integrations, large-scale data processing pipelines, and cloud-based automotive platforms.
+I build backend systems that connect platforms, move data reliably, and support business-critical workflows at scale. My experience spans Java services, Spring Boot applications, microservices, data pipelines, Google Cloud infrastructure, and enterprise product engineering.
 
-## Core Stack
+- 5+ years of software engineering experience
+- Strong foundation in Java, J2EE, Spring Boot, Hibernate, JUnit, and Mockito
+- Hands-on experience with GCP, Kubernetes, Docker, Pub/Sub, BigQuery, Bigtable, Firestore, and Cloud Storage
+- Built onboarding integrations, batch data workflows, and connected vehicle platform services
+- Familiar with AI-assisted engineering workflows using GitHub Copilot, Antigravity, and Codex
 
-### Languages and Frameworks
-- Java
-- Java 8
-- J2EE
-- Spring Boot
-- Spring MVC
-- Hibernate
-- JUnit
-- Mockito
-- React.js
+## What I Bring
 
-### Cloud and Platform
-- Google Cloud Platform
-- Kubernetes
-- Docker
-- Pub/Sub
-- Cloud Build
-- BigQuery
-- Bigtable
-- Firestore
-- Cloud Storage
-
-### Databases
-- PostgreSQL
-- Redis
-- Bigtable
-- BigQuery
-- Firestore
-
-### Tools and Quality
-- GitHub
-- GitLab
-- Bitbucket
-- Jenkins
-- Maven
-- SonarQube
-- Fortify
-- IntelliJ IDEA
-- Eclipse
-- Jira
-- Confluence
+- Backend engineering for scalable product and platform systems
+- Microservices design with maintainable service boundaries
+- Cloud-native development on Google Cloud Platform
+- Data pipeline implementation for batch and event-driven workflows
+- API integration across enterprise applications and internal platforms
+- Code quality and secure development using SonarQube and Fortify
 
 ## Experience Highlights
 
 ### Bristlecone India Limited
 **Software Engineer** | Aug 2021 - Present
 
-Worked on enterprise products and internal platforms focused on onboarding workflows, integrations, and large-scale data processing.
-
 **Equifax WFS - Connector Development**
-- Built Spring Boot-based integrations for I-9 form workflows and employee onboarding
-- Integrated data from HR systems such as Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
-- Worked with Firestore, Cloud Storage, Pub/Sub, Vault, Apigee, SonarQube, and Fortify
+- Built Spring Boot integrations for I-9 workflow automation and employee onboarding
+- Integrated HR systems including Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
+- Worked with Firestore, Pub/Sub, Cloud Storage, Vault, Apigee, SonarQube, and Fortify
 
 **PHQ - Data Management Services**
-- Developed Apache Beam and Dataflow batch jobs for processing hires, users, and location data
-- Built bulk CSV-driven onboarding flows for internal Equifax product systems
-- Worked on cloud-native batch processing with Java, Kubernetes, BigQuery, Pub/Sub, and Cloud Storage
+- Developed Apache Beam and Dataflow batch jobs for hires, users, and location processing
+- Built CSV-driven bulk ingestion workflows for internal platform operations
+- Delivered cloud-native processing pipelines using Java, Kubernetes, BigQuery, and Pub/Sub
 
 ### Autosense India Pvt Ltd
 **Software Engineer** | Jul 2019 - Aug 2021
 
-Worked on connected vehicle products and customer experience platforms for automotive use cases.
-
 **Digisense Mahindra Connected Vehicle Platform**
-- Contributed to a microservices-based data platform for vehicle onboarding, telemetry ingestion, alerting, and downstream APIs
-- Worked across ingestion, processing, storage, and alert pipelines
-- Used Spring Boot, Hibernate, Kubernetes, Redis, PostgreSQL, Bigtable, BigQuery, and Google Cloud services
+- Contributed to a microservices-based platform for vehicle onboarding, telemetry ingestion, alerting, and downstream APIs
+- Worked across ingestion, parsing, aggregation, storage, and data-serving workflows
+- Used Spring Boot, Hibernate, Redis, PostgreSQL, Bigtable, BigQuery, and Google Cloud services
 
 **Customer Experience Platform**
-- Implemented core backend business logic in Java
-- Built configurable UI components using React.js
+- Implemented core business logic in Java for customer-facing use cases
+- Built configurable UI features using React.js
 - Worked with GCP services including Bigtable, BigQuery, and Cloud Storage
 
-## Strengths
+## Tech Stack
 
-- Backend engineering
-- Microservices design
-- Cloud-native application development
-- Data pipeline implementation
-- API integration
-- Code quality and secure development practices
-- Cross-functional collaboration
+### Languages and Frameworks
+`Java` `Java 8` `J2EE` `Spring Boot` `Spring MVC` `Hibernate` `JUnit` `Mockito` `React.js`
 
-## Education
+### Cloud and Platform
+`Google Cloud Platform` `Kubernetes` `Docker` `Pub/Sub` `Cloud Build` `Apache Beam` `Dataflow`
 
-**B.E. in Computer Science & Engineering**  
-Er. Perumal Manimekalai College of Engineering  
-Aggregate: 7.5
+### Databases
+`PostgreSQL` `Redis` `Bigtable` `BigQuery` `Firestore`
 
-## Currently Open To
+### Tools
+`GitHub` `GitLab` `Bitbucket` `Jenkins` `Maven` `Jira` `Confluence` `IntelliJ IDEA` `Eclipse` `DBeaver`
 
-Roles involving backend engineering, Java development, cloud platforms, microservices, platform engineering, and product-focused software development.
+## GitHub Overview
 
-## Notes
+<p align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=anishvish&show_icons=true&theme=default&hide_border=true&rank_icon=github" alt="GitHub stats" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anishvish&layout=compact&theme=default&hide_border=true" alt="Top languages" />
+</p>
 
-This profile README is designed to act as a quick portfolio and resume summary. For a fuller professional snapshot, see [RESUME.md](./RESUME.md).
+## Resume and Contact
+
+- Resume: [RESUME.md](./RESUME.md)
+- Email: [anishvish5@gmail.com](mailto:anishvish5@gmail.com)
+- LinkedIn: [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish)
+- GitHub: [github.com/Anishvish](https://github.com/Anishvish)
+
+## Open To
+
+Backend engineering, Java development, microservices, cloud platform engineering, and product-focused software roles.
