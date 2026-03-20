@@ -79,33 +79,12 @@ I design and build systems that connect applications, process large volumes of d
   <img src="https://img.shields.io/badge/GitHub%20Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
 </p>
 
-## Experience Highlights
+## Career Snapshot
 
-### Bristlecone India Limited
-**Software Engineer** | Aug 2021 - Present
-
-**Equifax WFS - Connector Development**
-- Built Spring Boot integrations for I-9 workflow automation and employee onboarding
-- Integrated HR systems including Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
-- Worked with Firestore, Cloud Storage, Pub/Sub, Vault, Apigee, SonarQube, and Fortify
-
-**PHQ - Data Management Services**
-- Developed Apache Beam and Dataflow batch jobs for hires, users, and location processing
-- Built CSV-driven bulk ingestion workflows for internal platform operations
-- Delivered cloud-native processing pipelines using Java, Kubernetes, BigQuery, and Pub/Sub
-
-### Autosense India Pvt Ltd
-**Software Engineer** | Jul 2019 - Aug 2021
-
-**Digisense Mahindra Connected Vehicle Platform**
-- Contributed to a microservices-based platform for vehicle onboarding, telemetry ingestion, alerting, and downstream APIs
-- Worked across ingestion, parsing, aggregation, storage, and data-serving workflows
-- Used Spring Boot, Hibernate, Kubernetes, Redis, PostgreSQL, Bigtable, BigQuery, and Google Cloud services
-
-**Customer Experience Platform**
-- Implemented core business logic in Java for customer-facing use cases
-- Built configurable UI features using React.js
-- Worked with GCP services including Bigtable, BigQuery, and Cloud Storage
+- Currently working as a Software Engineer at Bristlecone India Limited
+- Previously worked at Autosense India Pvt Ltd on connected platform and customer experience products
+- Core focus areas include backend engineering, microservices, enterprise integration, cloud-native systems, and data platforms
+- Detailed professional experience is available in [RESUME.md](./RESUME.md)
 
 ## GitHub Overview
 

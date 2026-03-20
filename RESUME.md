@@ -2,6 +2,26 @@
 
 Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Microservices | Google Cloud Platform
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Experience-6%2B%20Years-0f766e?style=for-the-badge" alt="Experience" />
+  <img src="https://img.shields.io/badge/Primary%20Stack-Java%20%7C%20Spring%20Boot%20%7C%20GCP-1d4ed8?style=for-the-badge" alt="Primary stack" />
+  <img src="https://img.shields.io/badge/Focus-Backend%20%7C%20Microservices%20%7C%20Cloud-7c3aed?style=for-the-badge" alt="Focus" />
+</p>
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/Microservices-0f172a?style=flat-square" alt="Microservices" />
+  <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Google Cloud" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Apache%20Beam-FEAA2D?style=flat-square" alt="Apache Beam" />
+  <img src="https://img.shields.io/badge/BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+  <img src="https://img.shields.io/badge/Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firestore" />
+  <img src="https://img.shields.io/badge/GitHub%20Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
+  <img src="https://img.shields.io/badge/Codex-111827?style=flat-square" alt="Codex" />
+</p>
+
 - Email: [anishvish5@gmail.com](mailto:anishvish5@gmail.com)
 - LinkedIn: [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish)
 - GitHub: [github.com/Anishvish](https://github.com/Anishvish)
