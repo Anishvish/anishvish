@@ -1,6 +1,6 @@
 # Anish Vishwakarma
 
-Software Engineer | Java | Spring Boot | Microservices | Google Cloud Platform
+Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Microservices | Google Cloud Platform
 
 - Email: [anishvish5@gmail.com](mailto:anishvish5@gmail.com)
 - LinkedIn: [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish)
@@ -8,7 +8,17 @@ Software Engineer | Java | Spring Boot | Microservices | Google Cloud Platform
 
 ## Professional Summary
 
-Software Engineer with 6+ years of experience designing and developing backend systems, cloud-native services, microservices, and data processing applications. Strong background in Java, Spring Boot, GCP, Kubernetes, and enterprise integration. Experienced in product development, batch processing, platform services, and code quality tooling. Also familiar with modern AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex, and have built many projects across backend, cloud, and integration-focused domains.
+Software Engineer with 6+ years of experience in backend development, Java application development, microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java, Spring Boot, J2EE, REST API development, Hibernate, JUnit, Mockito, Google Cloud Platform, Kubernetes, Docker, Apache Beam, and data processing systems. Experienced in designing scalable backend services, batch processing applications, event-driven systems, and API integrations. Familiar with AI-assisted software development tools including GitHub Copilot, Antigravity, and Codex. Built multiple backend, cloud, and integration-focused projects across product engineering environments.
+
+## Target Roles
+
+- Senior Software Engineer
+- Software Engineer
+- Backend Engineer
+- Java Developer
+- Java Backend Developer
+- Microservices Developer
+- Cloud Engineer
 
 ## Technical Skills
 
@@ -16,6 +26,8 @@ Software Engineer with 6+ years of experience designing and developing backend s
 - Core Java
 - Java 8
 - J2EE
+- SQL
+- JDBC
 
 ### Frameworks and Libraries
 - Spring Boot
@@ -24,6 +36,8 @@ Software Engineer with 6+ years of experience designing and developing backend s
 - JUnit
 - Mockito
 - React.js
+- REST APIs
+- Swagger
 
 ### Cloud and DevOps
 - Google Cloud Platform
@@ -33,6 +47,9 @@ Software Engineer with 6+ years of experience designing and developing backend s
 - Pub/Sub
 - Apache Beam
 - Dataflow
+- Cloud Storage
+- Vault
+- Apigee
 
 ### Databases
 - PostgreSQL
@@ -40,6 +57,7 @@ Software Engineer with 6+ years of experience designing and developing backend s
 - Bigtable
 - BigQuery
 - Firestore
+- Google Datastore
 
 ### Developer Tools
 - IntelliJ IDEA
@@ -60,6 +78,25 @@ Software Engineer with 6+ years of experience designing and developing backend s
 - SonarQube
 - Fortify
 
+## Key Competencies
+
+- Backend Development
+- Java Development
+- Spring Boot Development
+- Microservices Architecture
+- REST API Development
+- Cloud-Native Application Development
+- Google Cloud Platform
+- Kubernetes
+- Docker
+- Event-Driven Architecture
+- Batch Processing
+- Data Pipelines
+- Enterprise Integration
+- Secure Coding
+- Code Quality Improvement
+- Agile Software Development
+
 ## Professional Experience
 
 ## Bristlecone India Limited, Bengaluru
@@ -67,45 +104,50 @@ Software Engineer with 6+ years of experience designing and developing backend s
 Aug 2021 - Present
 
 ### Equifax WFS - Connector Development
-**Role:** Development  
+**Role:** Software Development  
 **Tech Stack:** Spring Boot, Java, Kubernetes, Firestore, Cloud Storage, Pub/Sub, Fortify, SonarQube, Swagger, Vault, Apigee
 
 **Highlights**
-- Developed integrations for I-9 form workflows to support compliant employee onboarding
-- Extracted and transformed data from HR platforms including Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
-- Built backend services to improve onboarding automation and data consistency across systems
+- Developed backend integrations for I-9 workflow automation to support compliant employee onboarding
+- Designed and implemented Spring Boot microservices and REST APIs for data extraction, transformation, and onboarding workflows
+- Integrated enterprise HR platforms including Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
+- Improved onboarding automation, system integration reliability, and data consistency across connected platforms
+- Used Fortify and SonarQube to support secure coding practices and code quality improvements
 
 ### PHQ - Data Management Services
-**Role:** Development  
+**Role:** Software Development  
 **Tech Stack:** Google Dataflow, Apache Beam, Java, Kubernetes, BigQuery, Cloud Storage, Pub/Sub, Fortify, SonarQube, Swagger, Vault, Apigee
 
 **Highlights**
-- Developed batch jobs using Apache Beam for initiating new hires, users, and location data in the PHQ platform
-- Enabled bulk CSV-based upload and processing flows for internal operational use cases
-- Worked on scalable data processing pipelines across GCP services
+- Developed batch processing jobs using Apache Beam and Google Dataflow for new hires, users, and location data
+- Built scalable CSV-based bulk upload and data ingestion workflows for internal product operations
+- Implemented cloud-native data pipelines using Java, Kubernetes, BigQuery, Pub/Sub, and Cloud Storage
+- Supported internal data management services for enterprise onboarding and operational workflows
 
 ## Autosense India Pvt Ltd, Bengaluru
 **Software Engineer**  
 Jul 2019 - Aug 2021
 
 ### Digisense Mahindra Connected Vehicle Platform
-**Role:** Development  
+**Role:** Software Development  
 **Tech Stack:** Spring Boot, Microservices, Spring, Hibernate, Kubernetes, Redis, Core Java, Google Datastore, Google Storage, Bigtable, BigQuery, PostgreSQL
 
 **Highlights**
-- Contributed to a connected vehicle data platform for Mahindra & Mahindra
-- Supported vehicle onboarding, user onboarding, OEM alert configuration, telemetry ingestion, and alert processing
-- Worked on APIs, data ingestion pipelines, alerting flows, and downstream application support
-- Helped store and serve raw and processed data across data lake, data mart, and warehouse layers
+- Contributed to a connected vehicle platform for Mahindra & Mahindra using Java, Spring Boot, and microservices architecture
+- Developed backend services for vehicle onboarding, user onboarding, OEM alert configuration, telemetry ingestion, and alert processing
+- Worked on REST APIs, data ingestion pipelines, alerting workflows, and downstream application integrations
+- Supported raw and processed data storage across data lake, data mart, and warehouse layers
+- Worked with PostgreSQL, Redis, Bigtable, BigQuery, and Google Cloud services in a production environment
 
 ### Customer Experience Platform
-**Role:** Development  
+**Role:** Software Development  
 **Tech Stack:** Core Java, JDBC, Java, React.js, Google Cloud Platform, Bigtable, Cloud Storage, BigQuery
 
 **Highlights**
 - Implemented core business logic in Java for customer-facing platform workflows
-- Designed and developed a configurable web interface using React.js
-- Contributed to backend and frontend delivery in a cloud-based environment
+- Developed configurable user interface components using React.js
+- Contributed to backend and frontend delivery in a Google Cloud-based environment
+- Worked with JDBC, Bigtable, BigQuery, and Cloud Storage for application data processing and presentation
 
 ## Education
 
