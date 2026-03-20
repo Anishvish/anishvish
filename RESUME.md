@@ -8,7 +8,7 @@ Software Engineer | Java | Spring Boot | Microservices | Google Cloud Platform
 
 ## Professional Summary
 
-Software Engineer with 5+ years of experience designing and developing backend systems, cloud-native services, microservices, and data processing applications. Strong background in Java, Spring Boot, GCP, Kubernetes, and enterprise integration. Experienced in product development, batch processing, platform services, and code quality tooling. Also familiar with modern AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex.
+Software Engineer with 6+ years of experience designing and developing backend systems, cloud-native services, microservices, and data processing applications. Strong background in Java, Spring Boot, GCP, Kubernetes, and enterprise integration. Experienced in product development, batch processing, platform services, and code quality tooling. Also familiar with modern AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex, and have built many projects across backend, cloud, and integration-focused domains.
 
 ## Technical Skills
 

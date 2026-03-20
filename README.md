@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Backend-focused engineer with 5+ years of experience building cloud-native products, enterprise integrations, and data-intensive systems.
+  Backend-focused engineer with 6+ years of experience building cloud-native products, enterprise integrations, and data-intensive systems.
 </p>
 
 <p align="center">
@@ -22,10 +22,10 @@
 
 I build backend systems that connect platforms, move data reliably, and support business-critical workflows at scale. My experience spans Java services, Spring Boot applications, microservices, data pipelines, Google Cloud infrastructure, and enterprise product engineering.
 
-- 5+ years of software engineering experience
+- 6+ years of software engineering experience
 - Strong foundation in Java, J2EE, Spring Boot, Hibernate, JUnit, and Mockito
 - Hands-on experience with GCP, Kubernetes, Docker, Pub/Sub, BigQuery, Bigtable, Firestore, and Cloud Storage
-- Built onboarding integrations, batch data workflows, and connected vehicle platform services
+- Built many projects across onboarding integrations, batch data workflows, and connected vehicle platform services
 - Familiar with AI-assisted engineering workflows using GitHub Copilot, Antigravity, and Codex
 
 ## What I Bring
