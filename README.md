@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Experience-6%2B%20Years-0f766e?style=for-the-badge" alt="Experience" />
-  <img src="https://img.shields.io/badge/Role-Software%20Engineer-1d4ed8?style=for-the-badge" alt="Role" />
+  <img src="https://img.shields.io/badge/Role-Senior%20Software%20Engineer-1d4ed8?style=for-the-badge" alt="Role" />
   <img src="https://img.shields.io/badge/Focus-Backend%20%7C%20Cloud%20%7C%20Microservices-7c3aed?style=for-the-badge" alt="Focus" />
 </p>
 
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  Software Engineer with 6+ years of experience building scalable backend systems, enterprise integrations, cloud-native services, and data-intensive platforms.
+  Senior Software Engineer with 6+ years of experience building scalable backend systems, enterprise integrations, cloud-native services, and data-intensive platforms.
 </p>
 
 <p align="center">
@@ -81,7 +81,7 @@ I design and build systems that connect applications, process large volumes of d
 
 ## Career Snapshot
 
-- Currently working as a Software Engineer at Bristlecone India Limited
+- Currently working as a Senior Software Engineer at Bristlecone India Limited
 - Previously worked at Autosense India Pvt Ltd on connected platform and customer experience products
 - Core focus areas include backend engineering, microservices, enterprise integration, cloud-native systems, and data platforms
 - Detailed professional experience is available in [RESUME.md](./RESUME.md)

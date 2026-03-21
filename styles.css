@@ -23,6 +23,7 @@ body {
     radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 30%),
     radial-gradient(circle at top right, rgba(217, 119, 6, 0.16), transparent 25%),
     linear-gradient(180deg, #fcfaf6 0%, #f2ece1 100%);
+  animation: pageFade 700ms ease-out;
 }
 
 a {
@@ -51,6 +52,7 @@ a {
   background: rgba(15, 118, 110, 0.08);
   top: 110px;
   right: -80px;
+  animation: floatSlow 11s ease-in-out infinite;
 }
 
 .ambient-two {
@@ -59,6 +61,7 @@ a {
   background: rgba(217, 119, 6, 0.08);
   top: 780px;
   left: -110px;
+  animation: floatSlow 13s ease-in-out infinite reverse;
 }
 
 .ambient-three {
@@ -67,6 +70,7 @@ a {
   background: rgba(29, 78, 216, 0.08);
   top: 1500px;
   right: 40px;
+  animation: floatSlow 12s ease-in-out infinite;
 }
 
 .topbar {
@@ -125,6 +129,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 26px;
   box-shadow: var(--shadow);
+  animation: riseIn 700ms ease-out both;
 }
 
 .hero-copy {
@@ -216,6 +221,12 @@ li {
 .button.primary {
   background: var(--brand);
   color: #fff;
+}
+
+.button.accent {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #fff;
+  box-shadow: 0 16px 32px rgba(180, 83, 9, 0.2);
 }
 
 .button.secondary {
@@ -427,6 +438,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 24px;
   box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .logo-card img {
@@ -436,6 +448,15 @@ h2 {
 
 .logo-card span {
   font-weight: 700;
+}
+
+.logo-card:hover,
+.highlight-card:hover,
+.capability-card:hover,
+.timeline-card:hover,
+.mini-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 52px rgba(35, 33, 28, 0.16);
 }
 
 .badge-strip {
@@ -492,6 +513,16 @@ h2 {
   font-size: 1.22rem;
 }
 
+.promotion-note {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--brand-dark);
+  font-weight: 600;
+}
+
 ul {
   margin: 0;
   padding-left: 18px;
@@ -512,6 +543,36 @@ ul {
 .accent-panel {
   background: linear-gradient(180deg, rgba(255, 250, 240, 0.98), rgba(255, 255, 255, 0.94));
   border-style: dashed;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-14px) translateX(8px);
+  }
 }
 
 @media (max-width: 900px) {

@@ -28,7 +28,7 @@ Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Mic
 
 ## Professional Summary
 
-Software Engineer with 6+ years of experience in backend development, Java application development, microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java, Spring Boot, J2EE, REST API development, Hibernate, JUnit, Mockito, Google Cloud Platform, Kubernetes, Docker, Apache Beam, and data processing systems. Experienced in designing scalable backend services, batch processing applications, event-driven systems, and API integrations. Familiar with AI-assisted software development tools including GitHub Copilot, Antigravity, and Codex. Built multiple backend, cloud, and integration-focused projects across product engineering environments.
+Senior Software Engineer with 6+ years of experience in backend development, Java application development, microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java, Spring Boot, J2EE, REST API development, Hibernate, JUnit, Mockito, Google Cloud Platform, Kubernetes, Docker, Apache Beam, and data processing systems. Experienced in designing scalable backend services, batch processing applications, event-driven systems, and API integrations. Familiar with AI-assisted software development tools including GitHub Copilot, Antigravity, and Codex. Built multiple backend, cloud, and integration-focused projects across product engineering environments.
 
 ## Target Roles
 
@@ -120,8 +120,10 @@ Software Engineer with 6+ years of experience in backend development, Java appli
 ## Professional Experience
 
 ## Bristlecone India Limited, Bengaluru
-**Software Engineer**  
+**Senior Software Engineer**  
 Aug 2021 - Present
+
+Promoted to Senior Software Engineer approximately 1.7 years ago.
 
 ### Equifax WFS - Connector Development
 **Role:** Software Development  
