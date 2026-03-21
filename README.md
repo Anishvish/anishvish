@@ -21,6 +21,9 @@
   <a href="https://www.linkedin.com/in/anishvish">
     <img src="https://img.shields.io/badge/LinkedIn-Anish%20Vishwakarma-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
+  <a href="https://anishvish.github.io/anishvish/">
+    <img src="https://img.shields.io/badge/Website-View%20Portfolio-0f766e?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
+  </a>
   <a href="https://github.com/Anishvish/anishvish/blob/main/RESUME.md">
     <img src="https://img.shields.io/badge/Resume-View%20Full%20Profile-111827?style=for-the-badge&logo=readme&logoColor=white" alt="Resume" />
   </a>
