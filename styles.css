@@ -511,6 +511,18 @@ h2 {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.capability-list {
+  margin-top: 14px;
+}
+
+.capability-card .capability-list li {
+  margin-bottom: 8px;
+}
+
+.capability-primary .capability-list li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .skills-columns {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
