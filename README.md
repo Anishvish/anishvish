@@ -81,8 +81,9 @@ I design and build systems that connect applications, process large volumes of d
 
 ## Career Snapshot
 
-- Currently working as a Senior Software Engineer at Bristlecone India Limited
-- Previously worked at Autosense India Pvt Ltd on connected platform and customer experience products
+- Currently working as a Senior Software Engineer at Bristlecone
+- Previously worked as a Consultant at Bristlecone from Aug 2021 to Sep 2024
+- Earlier worked at Autosense Private Limited as a Software Engineer and Intern
 - Core focus areas include backend engineering, microservices, enterprise integration, cloud-native systems, and data platforms
 - Detailed professional experience is available in [RESUME.md](./RESUME.md)
 

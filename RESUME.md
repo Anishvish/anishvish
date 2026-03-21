@@ -124,55 +124,59 @@ Senior Software Engineer with 6+ years of experience in backend development, Jav
 
 ## Professional Experience
 
-## Bristlecone India Limited, Bengaluru
+## Bristlecone, Bengaluru, Karnataka, India
 **Senior Software Engineer**  
-Aug 2021 - Present
-
-### Equifax WFS - Connector Development
-**Role:** Software Development  
-**Tech Stack:** Spring Boot, Java, Kubernetes, Firestore, Cloud Storage, Pub/Sub, Fortify, SonarQube, Swagger, Vault, Apigee
+Sep 2024 - Present
 
 **Highlights**
-- Developed backend integrations for I-9 workflow automation to support compliant employee onboarding
-- Designed and implemented Spring Boot microservices and RESTful APIs for data extraction, transformation, and onboarding workflows
-- Integrated enterprise HR platforms including Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
-- Improved onboarding automation, system integration reliability, and data consistency across connected platforms
-- Used Fortify and SonarQube to support secure coding practices and code quality improvements
+- Developing and maintaining Java-based microservices using Spring Boot and Spring Cloud
+- Working on Apache Beam pipelines on Google Cloud Dataflow to process and analyze large amounts of data
+- Implementing Google Cloud Pub/Sub for event-driven communication between microservices
+- Deploying microservices to Google Kubernetes Engine and Google Cloud Platform
+- Using Jenkins for CI/CD pipelines
+- Using SonarQube for code quality analysis and Fortify for security analysis
+- Using Google Cloud Dataflow for batch data processing and Cloud Storage for persistence
 
-### PHQ - Data Management Services
-**Role:** Software Development  
-**Tech Stack:** Google Dataflow, Apache Beam, Java, Kubernetes, BigQuery, Cloud Storage, Pub/Sub, Fortify, SonarQube, Swagger, Vault, Apigee
+## Bristlecone, Bengaluru, Karnataka, India
+**Consultant**  
+Aug 2021 - Sep 2024
 
 **Highlights**
-- Developed batch processing jobs using Apache Beam and Google Dataflow for new hires, users, and location data
-- Built scalable CSV-based bulk upload and data ingestion workflows for internal product operations
-- Implemented cloud-native data pipelines using Java, Kubernetes, BigQuery, Pub/Sub, and Cloud Storage
-- Supported internal data management services for enterprise onboarding and operational workflows
+- Developed and maintained Java-based microservices using Spring Boot and Spring Cloud
+- Developed and maintained Apache Beam pipelines on Google Cloud Dataflow to process and analyze large amounts of data
+- Implemented Cloud Pub/Sub for event-driven communication between microservices
+- Deployed microservices to Google Kubernetes Engine and Google Cloud Platform
+- Used Jenkins for continuous integration and continuous delivery
+- Used SonarQube for code quality analysis and Fortify to analyze source code for security vulnerabilities
+- Used Google Cloud Dataflow for batch data processing
+- Used Cloud Storage for data persistence
 
-## Autosense India Pvt Ltd, Bengaluru
+## Autosense Private Limited, Bangalore
 **Software Engineer**  
-Jul 2019 - Aug 2021
-
-### Digisense Mahindra Connected Vehicle Platform
-**Role:** Software Development  
-**Tech Stack:** Spring Boot, Microservices, Spring, Hibernate, Kubernetes, Redis, Core Java, Google Datastore, Google Storage, Bigtable, BigQuery, PostgreSQL
+Feb 2020 - Aug 2021
 
 **Highlights**
-- Contributed to a connected vehicle platform for Mahindra & Mahindra using Java, Spring Boot, and microservices architecture
-- Developed backend services for vehicle onboarding, user onboarding, OEM alert configuration, telemetry ingestion, and alert processing
-- Worked on RESTful APIs, data ingestion pipelines, alerting workflows, distributed systems, and downstream application integrations
-- Supported raw and processed data storage across data lake, data mart, and warehouse layers
-- Worked with PostgreSQL, Redis, Bigtable, BigQuery, and Google Cloud services in a production environment
+- Developed and maintained Java-based microservices using Spring Boot and Google Cloud Platform, including Cloud Build, Docker, Kubernetes, Pub/Sub, and Compute Engine
+- Worked on Google Compute Engine, Google Cloud Run, and Google App Engine
+- Deployed microservices to Apache Tomcat web server
+- Used Google Pub/Sub for event-driven communication between microservices
+- Developed multiple microservices using a microservices architecture
+- Built basic exposure to Python and React.js
+- Used Maven and logging frameworks Log4J and SLF4J, and unit testing with JUnit and Mockito
+- Used version control tools such as Bitbucket and Git
+- Worked with NoSQL databases like Bigtable
+- Contributed to agile software development and production deployment support
 
-### Customer Experience Platform
-**Role:** Software Development  
-**Tech Stack:** Core Java, JDBC, Java, React.js, Google Cloud Platform, Bigtable, Cloud Storage, BigQuery
+## Autosense Private Limited, Bangalore
+**Intern**  
+Jul 2019 - Jan 2020
 
 **Highlights**
-- Implemented core business logic in Java for customer-facing platform workflows
-- Developed configurable user interface components using React.js
-- Contributed to backend and frontend delivery in a Google Cloud-based environment
-- Worked with JDBC, Bigtable, BigQuery, and Cloud Storage for application data processing and presentation
+- Developed and maintained Java-based microservices using Spring Boot and Google Cloud Platform, including Cloud Build, Docker, Kubernetes, Pub/Sub, and Compute Engine
+- Worked on Google Compute Engine, Google Cloud Run, and Google App Engine
+- Deployed microservices to Google Kubernetes Engine
+- Used Google Pub/Sub for event-driven communication between microservices
+- Used SonarQube to improve code quality
 
 ## Education
 
