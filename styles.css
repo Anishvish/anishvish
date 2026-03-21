@@ -622,6 +622,13 @@ h2 {
   font-size: 1.22rem;
 }
 
+.timeline-subrole {
+  margin: -4px 0 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
 ul {
   margin: 0;
   padding-left: 18px;

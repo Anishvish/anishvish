@@ -125,58 +125,27 @@ Senior Software Engineer with 6+ years of experience in backend development, Jav
 ## Professional Experience
 
 ## Bristlecone, Bengaluru, Karnataka, India
-**Senior Software Engineer**  
-Sep 2024 - Present
+**Senior Software Engineer** | Sep 2024 - Present  
+**Consultant** | Aug 2021 - Sep 2024
 
 **Highlights**
-- Developing and maintaining Java-based microservices using Spring Boot and Spring Cloud
-- Working on Apache Beam pipelines on Google Cloud Dataflow to process and analyze large amounts of data
-- Implementing Google Cloud Pub/Sub for event-driven communication between microservices
-- Deploying microservices to Google Kubernetes Engine and Google Cloud Platform
-- Using Jenkins for CI/CD pipelines
-- Using SonarQube for code quality analysis and Fortify for security analysis
-- Using Google Cloud Dataflow for batch data processing and Cloud Storage for persistence
-
-## Bristlecone, Bengaluru, Karnataka, India
-**Consultant**  
-Aug 2021 - Sep 2024
-
-**Highlights**
-- Developed and maintained Java-based microservices using Spring Boot and Spring Cloud
-- Developed and maintained Apache Beam pipelines on Google Cloud Dataflow to process and analyze large amounts of data
-- Implemented Cloud Pub/Sub for event-driven communication between microservices
-- Deployed microservices to Google Kubernetes Engine and Google Cloud Platform
-- Used Jenkins for continuous integration and continuous delivery
-- Used SonarQube for code quality analysis and Fortify to analyze source code for security vulnerabilities
-- Used Google Cloud Dataflow for batch data processing
-- Used Cloud Storage for data persistence
+- Designed, developed, and maintained Java-based microservices using Spring Boot and Spring Cloud for enterprise product and onboarding workflows
+- Built and maintained Apache Beam pipelines on Google Cloud Dataflow to process and analyze large-scale operational data
+- Implemented Cloud Pub/Sub for event-driven communication between microservices and supported deployments on Google Kubernetes Engine and Google Cloud Platform
+- Used Jenkins for CI/CD pipelines and delivery workflows
+- Used SonarQube for code quality analysis and Fortify for source code security analysis
+- Worked with Cloud Storage for data persistence and Dataflow for batch processing
 
 ## Autosense Private Limited, Bangalore
-**Software Engineer**  
-Feb 2020 - Aug 2021
+**Software Engineer** | Feb 2020 - Aug 2021  
+**Intern** | Jul 2019 - Jan 2020
 
 **Highlights**
 - Developed and maintained Java-based microservices using Spring Boot and Google Cloud Platform, including Cloud Build, Docker, Kubernetes, Pub/Sub, and Compute Engine
-- Worked on Google Compute Engine, Google Cloud Run, and Google App Engine
-- Deployed microservices to Apache Tomcat web server
-- Used Google Pub/Sub for event-driven communication between microservices
-- Developed multiple microservices using a microservices architecture
-- Built basic exposure to Python and React.js
-- Used Maven and logging frameworks Log4J and SLF4J, and unit testing with JUnit and Mockito
-- Used version control tools such as Bitbucket and Git
-- Worked with NoSQL databases like Bigtable
-- Contributed to agile software development and production deployment support
-
-## Autosense Private Limited, Bangalore
-**Intern**  
-Jul 2019 - Jan 2020
-
-**Highlights**
-- Developed and maintained Java-based microservices using Spring Boot and Google Cloud Platform, including Cloud Build, Docker, Kubernetes, Pub/Sub, and Compute Engine
-- Worked on Google Compute Engine, Google Cloud Run, and Google App Engine
-- Deployed microservices to Google Kubernetes Engine
-- Used Google Pub/Sub for event-driven communication between microservices
-- Used SonarQube to improve code quality
+- Worked on Google Compute Engine, Google Cloud Run, Google App Engine, Apache Tomcat, and Bigtable-backed systems
+- Built and supported multiple microservices within a microservices architecture for connected platform use cases
+- Used Maven, Log4J, SLF4J, JUnit, Mockito, Bitbucket, and Git in an agile software development environment
+- Contributed to cloud-native backend delivery from intern to software engineer level
 
 ## Education
 
