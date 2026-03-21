@@ -370,7 +370,10 @@ h2 {
 }
 
 .highlight-grid,
-.capability-grid {
+.capability-grid,
+.impact-grid,
+.project-grid,
+.skills-columns {
   display: grid;
   gap: 16px;
 }
@@ -379,8 +382,15 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.impact-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .highlight-card,
-.capability-card {
+.capability-card,
+.impact-card,
+.project-card,
+.skill-group {
   border-radius: 24px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
@@ -411,6 +421,23 @@ h2 {
   margin: 12px 0 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.impact-card {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.impact-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25rem;
+}
+
+.impact-card span {
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .panel p {
@@ -452,7 +479,10 @@ h2 {
 
 .logo-card:hover,
 .highlight-card:hover,
+.impact-card:hover,
 .capability-card:hover,
+.project-card:hover,
+.skill-group:hover,
 .timeline-card:hover,
 .mini-panel:hover {
   transform: translateY(-4px);
@@ -479,6 +509,73 @@ h2 {
 
 .capability-primary p {
   color: rgba(255, 255, 255, 0.82);
+}
+
+.skills-columns {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.skill-group {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.skill-group h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.skill-group p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-grid {
+  grid-template-columns: 1.15fr 1fr 1fr;
+}
+
+.project-card {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.project-primary {
+  background: linear-gradient(180deg, rgba(29, 78, 216, 0.96), rgba(17, 24, 39, 0.96));
+  color: #fff;
+}
+
+.project-primary p,
+.project-primary li {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.project-tag {
+  margin: 0 0 8px;
+  color: var(--brand-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.project-primary .project-tag {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.22rem;
+}
+
+.project-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-list {
+  margin-top: 14px;
 }
 
 .two-col {
@@ -513,16 +610,6 @@ h2 {
   font-size: 1.22rem;
 }
 
-.promotion-note {
-  margin: 16px 0 0;
-  padding: 10px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(15, 118, 110, 0.18);
-  background: rgba(15, 118, 110, 0.08);
-  color: var(--brand-dark);
-  font-weight: 600;
-}
-
 ul {
   margin: 0;
   padding-left: 18px;
@@ -543,6 +630,32 @@ ul {
 .accent-panel {
   background: linear-gradient(180deg, rgba(255, 250, 240, 0.98), rgba(255, 255, 255, 0.94));
   border-style: dashed;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 34px;
+  padding: 22px 6px 0;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-content: flex-start;
+}
+
+.footer-links a {
+  color: var(--brand-dark);
+  font-weight: 700;
 }
 
 @keyframes pageFade {
@@ -579,7 +692,10 @@ ul {
   .hero-grid,
   .two-col,
   .highlight-grid,
-  .capability-grid {
+  .capability-grid,
+  .impact-grid,
+  .project-grid,
+  .skills-columns {
     grid-template-columns: 1fr;
   }
 
@@ -618,6 +734,11 @@ ul {
 
   .logo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer {
+    flex-direction: column;
+    padding-top: 18px;
   }
 
   .badge-row,
