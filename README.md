@@ -36,7 +36,7 @@
 I design and build systems that connect applications, process large volumes of data, and support business-critical workflows. My work spans backend engineering, cloud platforms, microservices, data pipelines, and enterprise product development.
 
 - 6+ years of professional software engineering experience
-- Strong foundation in Java, J2EE, Spring Boot, Hibernate, JUnit, and Mockito
+- Strong foundation in Java 8, Java 11, Java 17, J2EE, Spring Boot, Hibernate, JUnit, and Mockito
 - Hands-on experience with GCP, Kubernetes, Docker, Pub/Sub, BigQuery, Bigtable, Firestore, and Cloud Storage
 - Built many projects across onboarding integrations, connected platforms, batch processing, and API-driven services
 - Familiar with AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex
