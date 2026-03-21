@@ -28,7 +28,7 @@ Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Mic
 
 ## Professional Summary
 
-Senior Software Engineer with 6+ years of experience in backend development, Java application development, microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java 8, Java 11, Java 17, Spring Boot, J2EE, REST API development, Hibernate, JUnit, Mockito, Google Cloud Platform, Kubernetes, Docker, Apache Beam, and data processing systems. Experienced in designing scalable backend services, batch processing applications, event-driven systems, and API integrations. Familiar with AI-assisted software development tools including GitHub Copilot, Antigravity, and Codex. Built multiple backend, cloud, and integration-focused projects across product engineering environments.
+Senior Software Engineer with 6+ years of experience in backend development, Java application development, microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java 8, Java 11, Java 17, Spring Boot, J2EE, RESTful API development, Hibernate, JUnit, Mockito, Google Cloud Platform, Kubernetes, Docker, Apache Beam, CI/CD practices, and data processing systems. Experienced in designing scalable backend services, distributed systems, batch processing applications, event-driven systems, and API integrations. Familiar with AI-assisted software development tools including GitHub Copilot, Antigravity, and Codex. Built multiple backend, cloud, and integration-focused projects across product engineering environments.
 
 ## Target Roles
 
@@ -111,6 +111,9 @@ Senior Software Engineer with 6+ years of experience in backend development, Jav
 - Google Cloud Platform
 - Kubernetes
 - Docker
+- CI/CD
+- Distributed Systems
+- Design Patterns
 - Event-Driven Architecture
 - Batch Processing
 - Data Pipelines
@@ -125,15 +128,13 @@ Senior Software Engineer with 6+ years of experience in backend development, Jav
 **Senior Software Engineer**  
 Aug 2021 - Present
 
-Promoted to Senior Software Engineer approximately 1.7 years ago.
-
 ### Equifax WFS - Connector Development
 **Role:** Software Development  
 **Tech Stack:** Spring Boot, Java, Kubernetes, Firestore, Cloud Storage, Pub/Sub, Fortify, SonarQube, Swagger, Vault, Apigee
 
 **Highlights**
 - Developed backend integrations for I-9 workflow automation to support compliant employee onboarding
-- Designed and implemented Spring Boot microservices and REST APIs for data extraction, transformation, and onboarding workflows
+- Designed and implemented Spring Boot microservices and RESTful APIs for data extraction, transformation, and onboarding workflows
 - Integrated enterprise HR platforms including Workday, Oracle, PageUp, Jobvite, Zoho, UKG, ServiceNow, and Microsoft Dynamics
 - Improved onboarding automation, system integration reliability, and data consistency across connected platforms
 - Used Fortify and SonarQube to support secure coding practices and code quality improvements
@@ -159,7 +160,7 @@ Jul 2019 - Aug 2021
 **Highlights**
 - Contributed to a connected vehicle platform for Mahindra & Mahindra using Java, Spring Boot, and microservices architecture
 - Developed backend services for vehicle onboarding, user onboarding, OEM alert configuration, telemetry ingestion, and alert processing
-- Worked on REST APIs, data ingestion pipelines, alerting workflows, and downstream application integrations
+- Worked on RESTful APIs, data ingestion pipelines, alerting workflows, distributed systems, and downstream application integrations
 - Supported raw and processed data storage across data lake, data mart, and warehouse layers
 - Worked with PostgreSQL, Redis, Bigtable, BigQuery, and Google Cloud services in a production environment
 
