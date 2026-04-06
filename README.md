@@ -1,4 +1,4 @@
-# Hi, I'm Anish Vishwakarma
+# Hi, I'm Anish Vishwakarma 👋
 
 <p align="center">
   <img src="https://img.shields.io/badge/Experience-6%2B%20Years-0f766e?style=for-the-badge" alt="Experience" />
@@ -34,18 +34,24 @@
   <img src="https://img.shields.io/badge/Open%20To-Backend%20%7C%20Java%20%7C%20Cloud-success?style=flat" alt="Open to backend java cloud roles" />
 </p>
 
-## About Me
+---
+
+## 🧑‍💻 About Me
 
 I design and build systems that connect applications, process large volumes of data, and support business-critical workflows. My work spans backend engineering, cloud platforms, microservices, data pipelines, and enterprise product development.
 
-- 6+ years of professional software engineering experience
-- Strong foundation in Java 8, Java 11, Java 17, J2EE, Spring Boot, Hibernate, JUnit, and Mockito
-- Hands-on experience with GCP, Kubernetes, Docker, Pub/Sub, BigQuery, Bigtable, Firestore, and Cloud Storage
-- Built many projects across onboarding integrations, connected platforms, batch processing, and API-driven services
-- Familiar with AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex
-- Comfortable working in agile product teams with Jira, Confluence, Jenkins, Maven, and Git-based workflows
+- 🔧 6+ years of professional software engineering experience
+- ☕ Strong foundation in **Java 8, Java 11, Java 17**, J2EE, Spring Boot, Hibernate, JUnit, and Mockito
+- ☁️ Hands-on experience with **GCP, Kubernetes, Docker**, Pub/Sub, BigQuery, Bigtable, Firestore, and Cloud Storage
+- 🏗️ Built many projects across onboarding integrations, connected platforms, batch processing, and API-driven services
+- 🤖 Familiar with AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex
+- 🚀 Comfortable working in agile product teams with Jira, Confluence, Jenkins, Maven, and Git-based workflows
 
-## Core Skills
+---
+
+## 🛠️ Core Skills
+
+**Languages & Frameworks**
 
 <p>
   <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
@@ -59,6 +65,8 @@ I design and build systems that connect applications, process large volumes of d
   <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
 </p>
 
+**Cloud & Infrastructure**
+
 <p>
   <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Google Cloud" />
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes" />
@@ -69,6 +77,8 @@ I design and build systems that connect applications, process large volumes of d
   <img src="https://img.shields.io/badge/Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firestore" />
   <img src="https://img.shields.io/badge/Bigtable-1A73E8?style=flat-square&logo=googlecloud&logoColor=white" alt="Bigtable" />
 </p>
+
+**DevOps & Tooling**
 
 <p>
   <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
@@ -82,28 +92,78 @@ I design and build systems that connect applications, process large volumes of d
   <img src="https://img.shields.io/badge/GitHub%20Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
 </p>
 
-## Career Snapshot
+---
 
-- Currently working as a Senior Software Engineer at Bristlecone
-- Previously worked as a Consultant at Bristlecone from Aug 2021 to Sep 2024
-- Earlier worked at Autosense Private Limited as a Software Engineer and Intern
-- Core focus areas include backend engineering, microservices, enterprise integration, cloud-native systems, and data platforms
-- Detailed professional experience is available in [RESUME.md](./RESUME.md)
+## 🚀 Featured Projects
 
-## GitHub Overview
+| Project | Description | Tech Stack |
+|---------|-------------|------------|
+| [**AI Invoice Estimation Generator**](https://github.com/Anishvish/ai-invoice-estimation-generator) | AI-assisted invoicing MVP for interior designers with measurement parsing, estimate calculation, and PDF generation | Java 17, Spring Boot, PostgreSQL, React Native, Zustand |
+| [**PlaySprint**](https://github.com/Anishvish/PlaySprint) | Browser-based game platform with canvas-rendered arcade games and smooth animations | React, TypeScript, Vite, HTML5 Canvas, Framer Motion |
+| [**PulseSpend**](https://github.com/Anishvish/PulseSpend) | Smart expense tracker with SMS auto-detection, category analytics, and offline-first storage | React Native, Expo, TypeScript, SQLite |
+| [**Aura App**](https://github.com/Anishvish/Aura-App---Productivity-Health-and-Expense-Tracker) | All-in-one productivity, wellness, and expense tracking mobile app | React Native, Expo SDK 54, SQLite, Lottie |
+| [**InteriorInvoice App**](https://github.com/Anishvish/InteriorInvoice-App) | Offline-first mobile invoicing app for contractors with PDF preview and GST-aware billing | React Native, Expo, TypeScript, Zustand |
+
+---
+
+## 💼 Career Snapshot
+
+| Period | Role | Company |
+|--------|------|---------|
+| Sep 2024 - Present | **Senior Software Engineer** | Bristlecone |
+| Aug 2021 - Sep 2024 | **Consultant** | Bristlecone |
+| Feb 2020 - Aug 2021 | **Software Engineer** | Autosense Private Limited |
+| Jul 2019 - Jan 2020 | **Intern** | Autosense Private Limited |
+
+Core focus areas: backend engineering, microservices, enterprise integration, cloud-native systems, and data platforms.
+
+> 📄 Detailed professional experience is available in [RESUME.md](./RESUME.md)
+
+---
+
+## 🤖 AI & Modern Development
+
+> I actively leverage AI-assisted development tools to accelerate delivery while maintaining code quality and engineering standards.
+
+- **GitHub Copilot** — Code completion and pair programming across Java, Spring Boot, and React Native projects
+- **Codex** — Automated code generation for boilerplate, tests, and documentation
+- **Spring AI** — Currently exploring AI integrations within Java backend services
+- **Prompt Engineering** — Crafting effective prompts to maximize AI tool output quality
+
+I believe the future of backend engineering involves AI augmentation, not replacement — and I'm actively building those skills.
+
+---
+
+## 📊 GitHub Overview
+
+<p align="center">
+  <img src="https://ghchart.rshah.org/0f766e/Anishvish" alt="GitHub Contribution Graph" />
+</p>
 
 <p align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=anishvish&show_icons=true&theme=default&hide_border=true&rank_icon=github" alt="GitHub stats" />
   <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anishvish&layout=compact&theme=default&hide_border=true" alt="Top languages" />
 </p>
 
-## Resume and Contact
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=anishvish&theme=default&hide_border=true" alt="GitHub streak" />
+</p>
 
-- Resume: [RESUME.md](./RESUME.md)
-- Email: [anishvish5@gmail.com](mailto:anishvish5@gmail.com)
-- LinkedIn: [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish)
-- GitHub: [github.com/Anishvish](https://github.com/Anishvish)
+---
 
-## Open To
+## 📬 Resume and Contact
 
-Backend engineering, Java development, microservices, cloud platform engineering, and product-focused software roles.
+| Channel | Link |
+|---------|------|
+| 📄 Resume | [RESUME.md](./RESUME.md) |
+| 📧 Email | [anishvish5@gmail.com](mailto:anishvish5@gmail.com) |
+| 💼 LinkedIn | [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish) |
+| 🌐 GitHub | [github.com/Anishvish](https://github.com/Anishvish) |
+| 🌍 Website | [anishvish.github.io/anishvish](https://anishvish.github.io/anishvish/) |
+| 📅 Book a Meeting | [Calendar Link](https://calendar.app.google/bf5AxWXvRfhnUFc2A) |
+
+---
+
+## 🎯 Open To
+
+> Backend engineering, Java development, microservices, cloud platform engineering, and product-focused software roles.

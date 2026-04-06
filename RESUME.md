@@ -1,6 +1,6 @@
-# Anish Vishwakarma
+      # Anish Vishwakarma
 
-Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Microservices | Google Cloud Platform
+**Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Microservices | Google Cloud Platform**
 
 <p align="left">
   <img src="https://img.shields.io/badge/Experience-6%2B%20Years-0f766e?style=for-the-badge" alt="Experience" />
@@ -22,13 +22,19 @@ Senior Software Engineer | Backend Engineer | Java Developer | Spring Boot | Mic
   <img src="https://img.shields.io/badge/Codex-111827?style=flat-square" alt="Codex" />
 </p>
 
-- Email: [anishvish5@gmail.com](mailto:anishvish5@gmail.com)
-- LinkedIn: [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish)
-- GitHub: [github.com/Anishvish](https://github.com/Anishvish)
+**Contact**
+- 📧 Email: [anishvish5@gmail.com](mailto:anishvish5@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/anishvish](https://www.linkedin.com/in/anishvish)
+- 🌐 GitHub: [github.com/Anishvish](https://github.com/Anishvish)
+- 🌍 Portfolio: [anishvish.github.io/anishvish](https://anishvish.github.io/anishvish/)
+
+---
 
 ## Professional Summary
 
 Senior Software Engineer with 6+ years of experience in backend development, Java application development, microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java 8, Java 11, Java 17, Spring Boot, J2EE, RESTful API development, Hibernate, JUnit, Mockito, Google Cloud Platform, Kubernetes, Docker, Apache Beam, CI/CD practices, and data processing systems. Experienced in designing scalable backend services, distributed systems, batch processing applications, event-driven systems, and API integrations. Familiar with AI-assisted software development tools including GitHub Copilot, Antigravity, and Codex. Built multiple backend, cloud, and integration-focused projects across product engineering environments.
+
+---
 
 ## Target Roles
 
@@ -40,112 +46,106 @@ Senior Software Engineer with 6+ years of experience in backend development, Jav
 - Microservices Developer
 - Cloud Engineer
 
+---
+
 ## Technical Skills
 
 ### Languages
-- Core Java
-- Java 8
-- Java 11
-- Java 17
-- J2EE
-- SQL
-- JDBC
+| Category | Technologies |
+|----------|-------------|
+| Core | Java 8, Java 11, Java 17, J2EE |
+| Query | SQL, JDBC |
 
-### Frameworks and Libraries
-- Spring Boot
-- Spring MVC
-- Hibernate
-- JUnit
-- Mockito
-- React.js
-- REST APIs
-- Swagger
+### Frameworks & Libraries
+| Category | Technologies |
+|----------|-------------|
+| Backend | Spring Boot, Spring MVC, Spring Cloud, Hibernate |
+| Testing | JUnit, Mockito |
+| Frontend | React.js |
+| API | REST APIs, Swagger |
 
-### Cloud and DevOps
-- Google Cloud Platform
-- Kubernetes
-- Docker
-- Cloud Build
-- Pub/Sub
-- Apache Beam
-- Dataflow
-- Cloud Storage
-- Vault
-- Apigee
+### Cloud & DevOps
+| Category | Technologies |
+|----------|-------------|
+| Platform | Google Cloud Platform (GKE, Cloud Run, App Engine, Compute Engine) |
+| Data | Cloud Storage, Pub/Sub, Dataflow, Apache Beam |
+| Security | Vault, Apigee |
+| Containers | Docker, Kubernetes |
+| CI/CD | Jenkins, Cloud Build, Maven |
 
 ### Databases
-- PostgreSQL
-- Redis
-- Bigtable
-- BigQuery
-- Firestore
-- Google Datastore
+| Category | Technologies |
+|----------|-------------|
+| Relational | PostgreSQL |
+| NoSQL | Redis, Bigtable, Firestore, Google Datastore |
+| Analytics | BigQuery |
 
 ### Developer Tools
-- IntelliJ IDEA
-- Eclipse
-- Jira
-- Confluence
-- Maven
-- Jenkins
-- SourceTree
-- Git Bash
-- SQL Workbench
-- DBeaver
+| Category | Technologies |
+|----------|-------------|
+| IDE | IntelliJ IDEA, Eclipse |
+| Project Management | Jira, Confluence |
+| Build | Maven |
+| CI/CD | Jenkins |
+| Database Tools | SQL Workbench, DBeaver |
+| Source Control | SourceTree, Git Bash |
 
-### Version Control and Quality
-- GitHub
-- GitLab
-- Bitbucket
-- SonarQube
-- Fortify
+### Version Control & Quality
+| Category | Technologies |
+|----------|-------------|
+| VCS | GitHub, GitLab, Bitbucket |
+| Code Quality | SonarQube |
+| Security | Fortify |
+
+---
 
 ## Key Competencies
 
-- Backend Development
-- Java Development
-- Spring Boot Development
-- Microservices Architecture
-- REST API Development
-- Cloud-Native Application Development
-- Google Cloud Platform
-- Kubernetes
-- Docker
-- CI/CD
-- Distributed Systems
-- Design Patterns
-- Event-Driven Architecture
-- Batch Processing
-- Data Pipelines
-- Enterprise Integration
-- Secure Coding
-- Code Quality Improvement
-- Agile Software Development
+- Backend Development & Java Application Engineering
+- Spring Boot & Microservices Architecture
+- REST API Design, Development & Integration Patterns
+- Cloud-Native Application Development (GCP, Kubernetes, Docker)
+- Distributed Systems & Event-Driven Architecture
+- Batch Processing & Data Pipeline Engineering
+- Enterprise Integration & Secure Coding Practices
+- CI/CD Automation & Code Quality Engineering
+- AI-Assisted Development (GitHub Copilot, Codex, Spring AI)
+- Agile Software Development & Cross-Functional Collaboration
+
+---
 
 ## Professional Experience
 
-## Bristlecone, Bengaluru, Karnataka, India
+### Bristlecone — Bengaluru, Karnataka, India
+
 **Senior Software Engineer** | Sep 2024 - Present  
 **Consultant** | Aug 2021 - Sep 2024
 
 **Highlights**
-- Designed, developed, and maintained Java-based microservices using Spring Boot and Spring Cloud for enterprise product and onboarding workflows
-- Built and maintained Apache Beam pipelines on Google Cloud Dataflow to process and analyze large-scale operational data
-- Implemented Cloud Pub/Sub for event-driven communication between microservices and supported deployments on Google Kubernetes Engine and Google Cloud Platform
-- Used Jenkins for CI/CD pipelines and delivery workflows
-- Used SonarQube for code quality analysis and Fortify for source code security analysis
-- Worked with Cloud Storage for data persistence and Dataflow for batch processing
+- Architected and delivered Java-based microservices using Spring Boot and Spring Cloud, powering enterprise product onboarding and integration workflows across 5+ platforms (Workday, Oracle, UKG, ServiceNow, Microsoft Dynamics)
+- Engineered Apache Beam pipelines on Google Cloud Dataflow, processing and transforming large-scale operational datasets for hires, users, and locations across multiple enterprise systems
+- Implemented Cloud Pub/Sub-based event-driven communication between 10+ microservices, reducing coupling and improving system resilience
+- Managed deployments on Google Kubernetes Engine, maintaining high availability across production environments
+- Established CI/CD pipelines using Jenkins, achieving consistent and repeatable delivery workflows
+- Enforced code quality and security standards using SonarQube and Fortify across all service repositories
+- Leveraged Cloud Storage and Dataflow for data persistence, batch processing, and operational data movement
 
-## Autosense Private Limited, Bangalore
+---
+
+### Autosense Private Limited — Bangalore
+
 **Software Engineer** | Feb 2020 - Aug 2021  
 **Intern** | Jul 2019 - Jan 2020
 
 **Highlights**
-- Developed and maintained Java-based microservices using Spring Boot and Google Cloud Platform, including Cloud Build, Docker, Kubernetes, Pub/Sub, and Compute Engine
-- Worked on Google Compute Engine, Google Cloud Run, Google App Engine, Apache Tomcat, and Bigtable-backed systems
-- Built and supported multiple microservices within a microservices architecture for connected platform use cases
-- Used Maven, Log4J, SLF4J, JUnit, Mockito, Bitbucket, and Git in an agile software development environment
-- Contributed to cloud-native backend delivery from intern to software engineer level
+- Developed and shipped Java-based microservices using Spring Boot on Google Cloud Platform, integrating Cloud Build, Docker, Kubernetes, Pub/Sub, and Compute Engine
+- Engineered backend systems on Google Compute Engine, Cloud Run, App Engine, and Apache Tomcat with Bigtable-backed data layers
+- Built and maintained multiple production microservices supporting connected vehicle platform use cases
+- Implemented comprehensive test suites using JUnit and Mockito, improving code coverage and reducing regression defects
+- Managed source control and collaboration using Maven, Bitbucket, and Git in an agile delivery environment
+- Progressed from intern to software engineer, taking on increasing ownership of cloud-native backend services
+
+---
 
 ## Education
 
@@ -153,13 +153,18 @@ Senior Software Engineer with 6+ years of experience in backend development, Jav
 Er. Perumal Manimekalai College of Engineering  
 Aggregate: 7.5
 
+---
+
 ## Soft Skills
 
-- Effective communication
-- Cross-functional collaboration
-- Agile development practices
+- Effective communication and cross-functional collaboration
+- Agile development practices and team-oriented delivery
+- Problem-solving, technical mentoring, and knowledge sharing
+- Self-driven learner — currently exploring Generative AI and Spring AI
 
-## Personal Details
+---
 
-- Date of Birth: 16-02-1997
-- Languages: Hindi, English, Tamil, Bhojpuri
+## Additional Information
+
+- **Languages:** Hindi, English, Tamil, Bhojpuri
+- **Location:** Bengaluru, Karnataka, India

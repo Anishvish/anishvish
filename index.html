@@ -4,37 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anish Vishwakarma | Senior Software Engineer</title>
-  <meta
-    name="description"
-    content="Anish Vishwakarma is a Senior Software Engineer with 6+ years of experience in Java, Spring Boot, Microservices, and Google Cloud Platform."
-  >
+  <meta name="description" content="Anish Vishwakarma is a Senior Software Engineer with 6+ years of experience in Java, Spring Boot, Microservices, and Google Cloud Platform.">
+  <meta name="keywords" content="Anish Vishwakarma, Senior Software Engineer, Java Developer, Spring Boot, Microservices, Google Cloud Platform, Backend Engineer">
+  <meta property="og:title" content="Anish Vishwakarma | Senior Software Engineer">
+  <meta property="og:description" content="Senior Software Engineer with 6+ years of experience building scalable backend systems, enterprise integrations, and cloud-native services.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <span class="preloader-logo">AV</span>
+    <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- AI Chat FAB -->
+  <button class="chat-fab" id="chat-fab" aria-label="Open AI Assistant">
+    💬
+    <span class="fab-label">Ask me anything about Anish</span>
+  </button>
+
+  <!-- AI Chat Window -->
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-header-info">
+          <strong>AI Assistant</strong>
+          <span>Ask about Anish's experience</span>
+        </div>
+      </div>
+      <button class="chat-close" id="chat-close">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg bot">
+        Hi! I'm Anish's AI assistant. Ask me anything about his skills, experience, projects, or how to get in touch. 👋
+        <div class="chat-suggestions" id="chat-suggestions">
+          <button class="chat-suggestion" data-q="What's his tech stack?">Tech stack</button>
+          <button class="chat-suggestion" data-q="Tell me about his experience">Experience</button>
+          <button class="chat-suggestion" data-q="What projects has he built?">Projects</button>
+          <button class="chat-suggestion" data-q="How can I contact him?">Contact</button>
+          <button class="chat-suggestion" data-q="What's he looking for?">Looking for</button>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask about skills, projects, experience..." autocomplete="off">
+      <button class="chat-send" id="chat-send">→</button>
+    </div>
+  </div>
+
+  <!-- Command Palette -->
+  <div class="cmd-overlay" id="cmd-overlay">
+    <div class="cmd-palette">
+      <input type="text" class="cmd-search" id="cmd-search" placeholder="Search anything... skills, projects, actions" autocomplete="off">
+      <div class="cmd-results" id="cmd-results"></div>
+      <div class="cmd-footer">
+        <span><kbd>↑↓</kbd> Navigate</span>
+        <span><kbd>↵</kbd> Select</span>
+        <span><kbd>Esc</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+
   <div class="page-shell">
     <div class="ambient ambient-one"></div>
     <div class="ambient ambient-two"></div>
     <div class="ambient ambient-three"></div>
+
     <header class="hero">
-      <nav class="topbar">
+      <nav class="topbar" id="topbar">
         <span class="brand">Anish Vishwakarma</span>
-        <div class="nav-links">
-          <a href="mailto:anishvish5@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/anishvish" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/Anishvish" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="nav-links" id="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+          <button class="kbd-hint" id="cmd-trigger" aria-label="Command palette">⌘K</button>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
 
       <div class="hero-grid">
         <section class="hero-copy">
           <p class="eyebrow">Senior Software Engineer | Backend Engineer | Java Developer</p>
-          <h1>Building backend systems, cloud services, and integration platforms that hold up in production.</h1>
+          <h1 id="hero-headline"></h1>
           <p class="hero-text">
             I have 6+ years of experience working across Java 8, Java 11, Java 17, Spring Boot, microservices, Google Cloud Platform,
             batch processing, enterprise integrations, and data-intensive applications.
@@ -47,7 +125,7 @@
             </div>
             <div class="signal-card">
               <span class="signal-label">Experience Path</span>
-              <strong>Intern to Senior Engineer</strong>
+              <strong>Intern → Senior Engineer</strong>
             </div>
             <div class="signal-card">
               <span class="signal-label">Workflow</span>
@@ -59,7 +137,6 @@
             <a class="button primary" href="mailto:anishvish5@gmail.com">Contact Me</a>
             <a class="button accent" href="https://calendar.app.google/bf5AxWXvRfhnUFc2A" target="_blank" rel="noreferrer">Book a Meeting</a>
             <a class="button secondary" href="https://github.com/Anishvish/anishvish/blob/main/RESUME.md" target="_blank" rel="noreferrer">View Resume</a>
-            <a class="button secondary" href="https://raw.githubusercontent.com/Anishvish/anishvish/main/RESUME.md" target="_blank" rel="noreferrer">Download Resume</a>
           </div>
 
           <div class="badge-row">
@@ -83,16 +160,16 @@
           </div>
           <div class="card-stats">
             <div>
-              <strong>6+</strong>
-              <span>Years</span>
+              <strong data-count="6">0</strong>
+              <span>Years+</span>
             </div>
             <div>
-              <strong>2</strong>
+              <strong data-count="2">0</strong>
               <span>Companies</span>
             </div>
             <div>
-              <strong>10+</strong>
-              <span>Core Tools</span>
+              <strong data-count="10">0</strong>
+              <span>Core Tools+</span>
             </div>
           </div>
           <div class="availability-panel">
@@ -107,7 +184,35 @@
     </header>
 
     <main>
-      <section class="section">
+      <!-- Currently Status Widget -->
+      <div class="status-widget reveal" id="status">
+        <h3>⚡ Currently</h3>
+        <div class="status-items">
+          <div class="status-item">
+            <span class="status-emoji">📚</span>
+            <div class="status-content">
+              <span class="status-label">Learning</span>
+              <span class="status-value">Generative AI + Spring AI integrations</span>
+            </div>
+          </div>
+          <div class="status-item">
+            <span class="status-emoji">🔨</span>
+            <div class="status-content">
+              <span class="status-label">Building</span>
+              <span class="status-value">PlaySprint — browser-based game platform</span>
+            </div>
+          </div>
+          <div class="status-item">
+            <span class="status-emoji">🎯</span>
+            <div class="status-content">
+              <span class="status-label">Looking For</span>
+              <span class="status-value">Senior Backend / Cloud / Platform Engineering roles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section reveal" id="about">
         <div class="section-heading">
           <p class="eyebrow">Profile</p>
           <h2>Professional Summary</h2>
@@ -126,7 +231,7 @@
       </section>
 
       <section class="section">
-        <div class="highlight-grid">
+        <div class="highlight-grid reveal-stagger">
           <article class="highlight-card">
             <p class="highlight-kicker">Strength</p>
             <h3>Scalable backend services</h3>
@@ -139,43 +244,47 @@
           </article>
           <article class="highlight-card">
             <p class="highlight-kicker">Strength</p>
-            <h3>Product-oriented execution</h3>
-            <p>Used to shipping features inside enterprise products, not just building isolated demos.</p>
+            <h3>AI-augmented engineering</h3>
+            <p>Leveraging GitHub Copilot, Codex, and AI tools to accelerate delivery while maintaining quality standards.</p>
           </article>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section reveal">
         <div class="section-heading">
           <p class="eyebrow">Impact</p>
           <h2>What Recruiters Should Notice</h2>
         </div>
-        <div class="impact-grid">
+        <div class="impact-grid reveal-stagger">
           <article class="impact-card">
             <strong>6+ Years</strong>
             <span>Professional experience across backend, cloud, and data-driven engineering work</span>
+            <div class="impact-metric">📈 Intern → Senior Engineer</div>
           </article>
           <article class="impact-card">
             <strong>Java 8 / 11 / 17</strong>
-            <span>Hands-on delivery experience across multiple production-era Java versions</span>
+            <span>Hands-on delivery across multiple production-era Java versions</span>
+            <div class="impact-metric">☕ 3 major Java releases</div>
           </article>
           <article class="impact-card">
             <strong>GCP + Kubernetes</strong>
-            <span>Cloud-native development using messaging, data processing, deployment, and infrastructure services</span>
+            <span>Cloud-native development using messaging, data processing, and infrastructure services</span>
+            <div class="impact-metric">☁️ 8+ GCP services</div>
           </article>
           <article class="impact-card">
-            <strong>Career Growth</strong>
-            <span>Progressed from intern to senior engineer across product and enterprise delivery teams</span>
+            <strong>AI-Ready</strong>
+            <span>Familiar with AI-assisted development, prompt engineering, and modern AI tooling</span>
+            <div class="impact-metric">🤖 Copilot + Codex + AI Workflows</div>
           </article>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section reveal">
         <div class="section-heading">
           <p class="eyebrow">Technology</p>
           <h2>Tech Stack</h2>
         </div>
-        <div class="logo-grid">
+        <div class="logo-grid reveal-stagger">
           <article class="logo-card">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
             <span>Java</span>
@@ -210,27 +319,19 @@
           </article>
         </div>
         <div class="badge-strip">
-          <span>Apache Beam</span>
-          <span>BigQuery</span>
-          <span>Firestore</span>
-          <span>Pub/Sub</span>
-          <span>J2EE</span>
-          <span>Hibernate</span>
-          <span>JUnit</span>
-          <span>Mockito</span>
-          <span>SonarQube</span>
-          <span>Fortify</span>
-          <span>GitHub Copilot</span>
-          <span>Codex</span>
+          <div class="badge-strip-inner">
+            <span>Apache Beam</span><span>BigQuery</span><span>Firestore</span><span>Pub/Sub</span><span>J2EE</span><span>Hibernate</span><span>JUnit</span><span>Mockito</span><span>SonarQube</span><span>Fortify</span><span>GitHub Copilot</span><span>Codex</span><span>Spring AI</span>
+            <span>Apache Beam</span><span>BigQuery</span><span>Firestore</span><span>Pub/Sub</span><span>J2EE</span><span>Hibernate</span><span>JUnit</span><span>Mockito</span><span>SonarQube</span><span>Fortify</span><span>GitHub Copilot</span><span>Codex</span><span>Spring AI</span>
+          </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section reveal">
         <div class="section-heading">
           <p class="eyebrow">Skills</p>
           <h2>Selected Skills</h2>
         </div>
-        <div class="skills-columns">
+        <div class="skills-columns reveal-stagger">
           <article class="skill-group">
             <h3>Backend</h3>
             <p>Java 8, Java 11, Java 17, Spring Boot, Spring Cloud, J2EE, RESTful APIs, Hibernate</p>
@@ -248,112 +349,109 @@
             <p>Docker, Kubernetes, Jenkins, Maven, CI/CD, GitHub, Bitbucket, Git</p>
           </article>
           <article class="skill-group">
-            <h3>Quality</h3>
-            <p>JUnit, Mockito, SonarQube, Fortify, Log4J, SLF4J, secure coding practices</p>
+            <h3>AI & Quality</h3>
+            <p>GitHub Copilot, Codex, JUnit, Mockito, SonarQube, Fortify, Spring AI</p>
           </article>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section reveal">
         <div class="section-heading">
           <p class="eyebrow">Capabilities</p>
           <h2>What I Work On</h2>
         </div>
-        <div class="capability-grid">
+        <div class="capability-grid reveal-stagger">
           <article class="capability-card capability-primary">
             <h3>Enterprise Integrations</h3>
-            <p>
-              I build backend services that connect enterprise applications, transform business data, and automate workflow-heavy operations across multiple systems.
-            </p>
+            <p>I build backend services that connect enterprise applications, transform business data, and automate workflow-heavy operations across multiple systems.</p>
             <ul class="capability-list">
-              <li>HR and onboarding integrations across platforms like Workday, Oracle, UKG, ServiceNow, and Microsoft Dynamics</li>
-              <li>Data extraction, transformation, validation, and workflow orchestration using Java and Spring Boot services</li>
+              <li>HR and onboarding integrations across Workday, Oracle, UKG, ServiceNow, and Microsoft Dynamics</li>
+              <li>Data extraction, transformation, validation, and workflow orchestration using Java and Spring Boot</li>
               <li>Security and gateway tooling with Vault, Apigee, SonarQube, and Fortify</li>
             </ul>
           </article>
           <article class="capability-card">
             <h3>Data Processing Systems</h3>
-            <p>
-              I work on batch processing, event-driven communication, ingestion pipelines, and cloud-based data movement for operational and product use cases.
-            </p>
+            <p>I work on batch processing, event-driven communication, ingestion pipelines, and cloud-based data movement.</p>
             <ul class="capability-list">
-              <li>Apache Beam and Google Cloud Dataflow pipelines for hires, users, locations, and bulk operational data</li>
-              <li>Pub/Sub-based messaging patterns for distributed backend communication</li>
-              <li>BigQuery, Cloud Storage, Firestore, and Bigtable-backed processing workflows</li>
+              <li>Apache Beam and Dataflow pipelines for large-scale operational data</li>
+              <li>Pub/Sub-based messaging for distributed backend communication</li>
+              <li>BigQuery, Cloud Storage, Firestore, and Bigtable-backed workflows</li>
             </ul>
           </article>
           <article class="capability-card">
-            <h3>Platform APIs</h3>
-            <p>
-              I design service layers and APIs that support onboarding systems, telemetry platforms, alerting flows, internal tools, and customer-facing product features.
-            </p>
+            <h3>Platform APIs & Cloud</h3>
+            <p>I design service layers, APIs, and cloud-native delivery workflows that support production systems.</p>
             <ul class="capability-list">
-              <li>RESTful API development with Spring Boot, Spring Cloud, J2EE, Hibernate, and PostgreSQL</li>
-              <li>Microservices for platform operations, vehicle workflows, invoice systems, and customer experience apps</li>
-              <li>Production-oriented backend design with maintainable service boundaries and reusable components</li>
-            </ul>
-          </article>
-          <article class="capability-card">
-            <h3>Cloud and Delivery Engineering</h3>
-            <p>
-              I work comfortably across application code, cloud deployment, quality tooling, and release workflows needed to ship and support real systems.
-            </p>
-            <ul class="capability-list">
-              <li>Google Cloud Platform services including GKE, Compute Engine, Cloud Run, App Engine, and Cloud Storage</li>
-              <li>Docker, Kubernetes, Jenkins, Maven, CI/CD, and code quality workflows</li>
-              <li>Experience supporting production delivery in agile product environments</li>
+              <li>RESTful APIs with Spring Boot, Hibernate, and PostgreSQL</li>
+              <li>GKE, Cloud Run, App Engine, Docker, and Kubernetes deployments</li>
+              <li>CI/CD with Jenkins, Maven, and code quality workflows</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section reveal" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Selected Work</p>
           <h2>Featured Project Experience</h2>
         </div>
-        <div class="project-grid">
+        <div class="project-grid reveal-stagger">
           <article class="project-card project-primary">
             <p class="project-tag">AI Application</p>
             <h3>AI Invoice Estimation Generator</h3>
-            <p>
-              Production-ready MVP for interior designers, contractors, and small businesses with AI-assisted measurement parsing, estimate calculation, and invoice PDF generation.
-            </p>
+            <p>Production-ready MVP for interior designers with AI-assisted measurement parsing, estimate calculation, and invoice PDF generation.</p>
             <ul class="project-list">
-              <li>Tech stack: Java 17, Spring Boot, PostgreSQL, Spring Data JPA, OpenPDF, Expo React Native, Zustand, React Navigation, Axios</li>
-              <li>Features project management, multi-line estimates, GST-ready invoicing, PDF generation, and AI-assisted parsing</li>
+              <li>Java 17, Spring Boot, PostgreSQL, React Native, Zustand</li>
+              <li>AI-assisted parsing, GST-ready invoicing, PDF generation</li>
               <li><a href="https://github.com/Anishvish/ai-invoice-estimation-generator" target="_blank" rel="noreferrer">View Repository</a></li>
+            </ul>
+          </article>
+          <article class="project-card project-featured">
+            <p class="project-tag">Game Platform</p>
+            <h3>PlaySprint</h3>
+            <p>Browser-based game platform with canvas-rendered arcade games, smooth animations, and an intuitive launcher UI.</p>
+            <ul class="project-list">
+              <li>React, TypeScript, Vite, HTML5 Canvas, Framer Motion</li>
+              <li>Bullet Storm and Lane Dash with real-time canvas rendering</li>
+              <li><a href="https://github.com/Anishvish/PlaySprint" target="_blank" rel="noreferrer">View Repository</a></li>
+            </ul>
+          </article>
+          <article class="project-card project-featured">
+            <p class="project-tag">Finance App</p>
+            <h3>PulseSpend</h3>
+            <p>Smart expense tracker with SMS auto-detection, category analytics, and offline-first SQLite storage.</p>
+            <ul class="project-list">
+              <li>React Native, Expo, TypeScript, SQLite</li>
+              <li>SMS parsing, budget tracking, dark mode, category charts</li>
+              <li><a href="https://github.com/Anishvish/PulseSpend" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
           </article>
           <article class="project-card">
             <p class="project-tag">Productivity App</p>
-            <h3>Aura App - Productivity, Health and Expense Tracker</h3>
-            <p>
-              All-in-one offline-first mobile application that combines productivity, wellness, and expense tracking into a single React Native experience.
-            </p>
+            <h3>Aura App</h3>
+            <p>All-in-one offline-first mobile app combining productivity, wellness, and expense tracking.</p>
             <ul class="project-list">
-              <li>Tech stack: React Native 0.81, Expo SDK 54, React Native Paper, React Navigation, Expo SQLite, React Context API, Lottie, Expo Sensors, AsyncStorage</li>
-              <li>Includes Pomodoro timer, pedometer-based wellness tracking, expense charts, theme switching, and local-first storage</li>
+              <li>React Native, Expo SDK 54, SQLite, Lottie</li>
+              <li>Pomodoro timer, pedometer, expense charts, theming</li>
               <li><a href="https://github.com/Anishvish/Aura-App---Productivity-Health-and-Expense-Tracker" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
           </article>
           <article class="project-card">
             <p class="project-tag">Business Utility</p>
             <h3>InteriorInvoice App</h3>
-            <p>
-              Offline-first mobile invoicing application built for interior designers and contractors to create, manage, preview, and share professional PDF invoices.
-            </p>
+            <p>Offline-first mobile invoicing for contractors with PDF preview and GST-aware billing.</p>
             <ul class="project-list">
-              <li>Tech stack: React Native with Expo SDK 54, TypeScript, React Native Paper, React Navigation, Zustand, expo-sqlite, React Hook Form, expo-print, expo-sharing</li>
-              <li>Supports invoice management, payment tracking, GST-aware invoicing, PDF preview and sharing, and multi-company workflows</li>
+              <li>React Native, Expo, TypeScript, Zustand</li>
+              <li>Invoice management, payment tracking, PDF sharing</li>
               <li><a href="https://github.com/Anishvish/InteriorInvoice-App" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="section two-col">
-        <div>
+      <section class="section two-col" id="experience">
+        <div class="reveal-left">
           <div class="section-heading">
             <p class="eyebrow">Experience</p>
             <h2>Career Highlights</h2>
@@ -362,35 +460,34 @@
           <article class="timeline-card">
             <div class="timeline-meta">
               <span>Bristlecone</span>
-              <span>Aug 2021 - Present</span>
+              <span>Aug 2021 – Present</span>
             </div>
             <h3>Senior Software Engineer | Consultant</h3>
-            <p class="timeline-subrole">Senior Software Engineer, Sep 2024 - Present | Consultant, Aug 2021 - Sep 2024</p>
+            <p class="timeline-subrole">Senior Software Engineer, Sep 2024 – Present | Consultant, Aug 2021 – Sep 2024</p>
             <ul>
-              <li>Designed and maintained Java microservices using Spring Boot and Spring Cloud for enterprise product, onboarding, and integration workflows.</li>
-              <li>Built Apache Beam and Google Cloud Dataflow pipelines for large-scale data processing and operational data movement.</li>
-              <li>Implemented Cloud Pub/Sub for event-driven communication and supported deployments on GKE and broader GCP infrastructure.</li>
-              <li>Used Jenkins for CI/CD, SonarQube for code quality, and Fortify for security analysis.</li>
+              <li>Designed Java microservices using Spring Boot and Spring Cloud for enterprise onboarding and integration workflows</li>
+              <li>Built Apache Beam pipelines on Dataflow processing large-scale operational data across multiple enterprise systems</li>
+              <li>Implemented Cloud Pub/Sub for event-driven communication and deployed on GKE</li>
+              <li>Used Jenkins CI/CD, SonarQube for quality, and Fortify for security analysis</li>
             </ul>
           </article>
 
           <article class="timeline-card">
             <div class="timeline-meta">
               <span>Autosense Private Limited</span>
-              <span>Jul 2019 - Aug 2021</span>
+              <span>Jul 2019 – Aug 2021</span>
             </div>
             <h3>Software Engineer | Intern</h3>
-            <p class="timeline-subrole">Software Engineer, Feb 2020 - Aug 2021 | Intern, Jul 2019 - Jan 2020</p>
+            <p class="timeline-subrole">Software Engineer, Feb 2020 – Aug 2021 | Intern, Jul 2019 – Jan 2020</p>
             <ul>
-              <li>Built and maintained Java microservices with Spring Boot on Google Cloud Platform using Docker, Kubernetes, Pub/Sub, and Compute Engine.</li>
-              <li>Worked on Compute Engine, Cloud Run, App Engine, Apache Tomcat, and Bigtable-backed backend systems.</li>
-              <li>Used Maven, Log4J, SLF4J, JUnit, Mockito, Bitbucket, and Git in an agile delivery environment.</li>
-              <li>Progressed from intern to software engineer while supporting cloud-native microservices with GKE, Cloud Run, App Engine, and Pub/Sub.</li>
+              <li>Built Java microservices with Spring Boot on GCP using Docker, Kubernetes, and Pub/Sub</li>
+              <li>Worked on Compute Engine, Cloud Run, App Engine, and Bigtable-backed systems</li>
+              <li>Progressed from intern to software engineer while supporting cloud-native microservices</li>
             </ul>
           </article>
         </div>
 
-        <div>
+        <div class="reveal-right">
           <div class="section-heading">
             <p class="eyebrow">Strengths</p>
             <h2>What I Bring</h2>
@@ -406,22 +503,81 @@
               <p>Building cloud-native workflows with GCP, Kubernetes, event-driven systems, and data pipelines.</p>
             </article>
             <article class="mini-panel">
-              <h3>Delivery Mindset</h3>
-              <p>Comfortable with agile teams, code quality tooling, secure development, and modern AI-assisted engineering workflows.</p>
+              <h3>AI-Augmented Delivery</h3>
+              <p>Using GitHub Copilot, Codex, and AI tools to accelerate development velocity while maintaining code quality.</p>
             </article>
             <article class="mini-panel accent-panel">
               <h3>Tooling I Use</h3>
-              <p>GitHub, GitLab, Bitbucket, Jenkins, Maven, SonarQube, Fortify, Jira, Confluence, GitHub Copilot, and Codex.</p>
+              <p>GitHub, Bitbucket, Jenkins, Maven, SonarQube, Fortify, Jira, Confluence, GitHub Copilot, Codex.</p>
             </article>
             <article class="mini-panel">
               <h3>Currently Looking For</h3>
-              <p>Senior Java backend engineering, microservices, platform engineering, and cloud-focused product roles.</p>
+              <p>Senior Java backend, microservices, platform engineering, and cloud-focused product roles.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <!-- Wave divider before education -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <path d="M0,0 C300,50 900,10 1200,40 L1200,60 L0,60 Z"></path>
+        </svg>
+      </div>
+
+      <section class="section reveal" id="education">
+        <div class="section-heading">
+          <p class="eyebrow">Education</p>
+          <h2>Academic Background</h2>
+        </div>
+        <div class="education-grid reveal-stagger">
+          <article class="education-card">
+            <div class="education-icon">🎓</div>
+            <h3>B.E. in Computer Science &amp; Engineering</h3>
+            <p>Er. Perumal Manimekalai College of Engineering</p>
+            <div class="education-detail">📊 Aggregate: 7.5</div>
+          </article>
+          <article class="education-card">
+            <div class="education-icon">🌐</div>
+            <h3>Continuous Learning</h3>
+            <p>Currently exploring Generative AI, Spring AI, LangChain4j, and AI-augmented development workflows to stay ahead of industry trends.</p>
+            <div class="education-detail">🤖 AI + Spring AI + Prompt Engineering</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Wave divider before GitHub -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <path d="M0,40 C300,10 900,50 1200,0 L1200,60 L0,60 Z"></path>
+        </svg>
+      </div>
+
+      <section class="section reveal github-section" id="github">
+        <div class="section-heading">
+          <p class="eyebrow">Open Source</p>
+          <h2>GitHub Activity</h2>
+        </div>
+        <div class="github-cards reveal-stagger">
+          <div class="github-stat-card">
+            <span class="github-stat-number" data-count="5">0</span>
+            <span class="github-stat-label">Public Projects</span>
+          </div>
+          <div class="github-stat-card">
+            <span class="github-stat-number" data-count="5">0</span>
+            <span class="github-stat-label">Tech Stacks</span>
+          </div>
+          <div class="github-stat-card">
+            <span class="github-stat-number" data-count="3">0</span>
+            <span class="github-stat-label">Languages</span>
+          </div>
+        </div>
+        <div class="github-graph">
+          <img src="https://ghchart.rshah.org/0f766e/Anishvish" alt="Anish Vishwakarma's GitHub Contribution Graph" loading="lazy">
+        </div>
+      </section>
+
+      <section class="section reveal-scale" id="contact">
         <div class="section-heading">
           <p class="eyebrow">Contact</p>
           <h2>Open To Opportunities</h2>
@@ -429,7 +585,7 @@
         <div class="contact-panel">
           <p>
             I am open to backend engineering, Java development, microservices, cloud platform engineering,
-            and product-focused software roles.
+            and product-focused software roles. Let’s connect!
           </p>
           <div class="contact-links">
             <a href="mailto:anishvish5@gmail.com">anishvish5@gmail.com</a>
@@ -442,7 +598,7 @@
     </main>
 
     <footer class="site-footer">
-      <div>
+      <div class="footer-content">
         <strong>Anish Vishwakarma</strong>
         <p>I enjoy building reliable backend systems and simplifying complex integrations.</p>
       </div>
@@ -453,6 +609,499 @@
         <a href="https://calendar.app.google/bf5AxWXvRfhnUFc2A" target="_blank" rel="noreferrer">Book a Slot</a>
       </div>
     </footer>
+    <div class="footer-copyright">
+      &copy; <span id="copyright-year"></span> Anish Vishwakarma. Built with care.
+    </div>
   </div>
+
+  <script>
+  // ═══════════════════════════════════════════════
+  // TYPING EFFECT
+  // ═══════════════════════════════════════════════
+  (function () {
+    const el = document.getElementById('hero-headline');
+    const text = "Building backend systems, cloud services, and integration platforms that hold up in production.";
+    let i = 0;
+    el.classList.add('typing-cursor');
+    function type() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 28 + Math.random() * 22);
+      } else {
+        setTimeout(() => el.classList.remove('typing-cursor'), 1500);
+      }
+    }
+    setTimeout(type, 600);
+  })();
+
+  // ═══════════════════════════════════════════════
+  // SCROLL REVEAL
+  // ═══════════════════════════════════════════════
+  (function () {
+    const els = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-left, .reveal-right, .reveal-scale');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+  })();
+
+  // ═══════════════════════════════════════════════
+  // ANIMATED COUNTERS
+  // ═══════════════════════════════════════════════
+  (function () {
+    const counters = document.querySelectorAll('[data-count]');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseInt(el.dataset.count);
+          let current = 0;
+          const step = () => {
+            current += target / 40;
+            if (current < target) {
+              el.textContent = Math.floor(current);
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = target;
+            }
+          };
+          requestAnimationFrame(step);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => obs.observe(el));
+  })();
+
+  // ═══════════════════════════════════════════════
+  // SMOOTH SCROLL
+  // ═══════════════════════════════════════════════
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ═══════════════════════════════════════════════
+  // SCROLL PROGRESS BAR
+  // ═══════════════════════════════════════════════
+  (function () {
+    const bar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (window.scrollY / h * 100) + '%';
+    }, { passive: true });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // BACK TO TOP
+  // ═══════════════════════════════════════════════
+  (function () {
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // DARK MODE TOGGLE
+  // ═══════════════════════════════════════════════
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    toggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // CUSTOM CURSOR
+  // ═══════════════════════════════════════════════
+  (function () {
+    if (window.innerWidth < 900) return;
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top = my + 'px';
+    });
+
+    function animateRing() {
+      rx += (mx - rx) * 0.15;
+      ry += (my - ry) * 0.15;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    const hoverEls = document.querySelectorAll('a, button, .logo-card, .highlight-card, .impact-card, .capability-card, .project-card, .skill-group, .timeline-card, .mini-panel, .signal-card, .pill, .badge-strip-inner span, .contact-links a, .chat-suggestion');
+    hoverEls.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        dot.classList.add('hovering');
+        ring.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.classList.remove('hovering');
+        ring.classList.remove('hovering');
+      });
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // FLOATING PARTICLES
+  // ═══════════════════════════════════════════════
+  (function () {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const COUNT = 35;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.5 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.opacity = Math.random() * 0.4 + 0.1;
+        const colors = ['rgba(15,118,110,', 'rgba(217,119,6,', 'rgba(29,78,216,'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + this.opacity + ')';
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(15,118,110,' + (0.06 * (1 - dist / 150)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+
+  // ═══════════════════════════════════════════════
+  // AI CHATBOT (Rule-Based, No API Key)
+  // ═══════════════════════════════════════════════
+  (function () {
+    const fab = document.getElementById('chat-fab');
+    const win = document.getElementById('chat-window');
+    const close = document.getElementById('chat-close');
+    const input = document.getElementById('chat-input');
+    const send = document.getElementById('chat-send');
+    const msgs = document.getElementById('chat-messages');
+
+    fab.addEventListener('click', () => {
+      win.classList.toggle('open');
+      if (win.classList.contains('open')) {
+        fab.style.display = 'none';
+        input.focus();
+      }
+    });
+
+    close.addEventListener('click', () => {
+      win.classList.remove('open');
+      fab.style.display = 'flex';
+    });
+
+    // Suggestion buttons
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('chat-suggestion')) {
+        const q = e.target.dataset.q;
+        addMsg(q, 'user');
+        setTimeout(() => addMsg(getResponse(q), 'bot'), 400 + Math.random() * 400);
+      }
+    });
+
+    send.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+    function sendMessage() {
+      const q = input.value.trim();
+      if (!q) return;
+      addMsg(q, 'user');
+      input.value = '';
+      setTimeout(() => addMsg(getResponse(q), 'bot'), 500 + Math.random() * 500);
+    }
+
+    function addMsg(text, type) {
+      const div = document.createElement('div');
+      div.className = 'chat-msg ' + type;
+      div.textContent = text;
+      msgs.appendChild(div);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    // Knowledge base
+    const KB = {
+      skills: "Anish's core tech stack includes Java 8/11/17, Spring Boot, Spring Cloud, J2EE, Hibernate, JUnit, Mockito, and REST APIs for backend. For cloud: Google Cloud Platform (GKE, Cloud Run, App Engine, Compute Engine, Pub/Sub, Cloud Storage, Dataflow). For data: Apache Beam, BigQuery, Bigtable, Firestore, PostgreSQL, Redis. DevOps: Docker, Kubernetes, Jenkins, Maven, CI/CD. AI tools: GitHub Copilot, Codex, Spring AI.",
+      experience: "Anish has 6+ years of experience. Currently Senior Software Engineer at Bristlecone (since Sep 2024), previously Consultant there (Aug 2021 - Sep 2024). Before that, Software Engineer at Autosense Private Limited (Feb 2020 - Aug 2021), starting as an Intern (Jul 2019 - Jan 2020). He progressed from intern to senior engineer across backend, cloud, and enterprise product engineering.",
+      projects: "Anish has built 5 key projects: 1) AI Invoice Estimation Generator — Java 17/Spring Boot AI-powered invoicing MVP. 2) PlaySprint — React/TypeScript browser game platform with Canvas API. 3) PulseSpend — React Native expense tracker with SMS auto-detection. 4) Aura App — All-in-one productivity, health, and expense tracker. 5) InteriorInvoice App — Offline-first mobile invoicing tool.",
+      contact: "You can reach Anish via: Email: anishvish5@gmail.com | LinkedIn: linkedin.com/in/anishvish | GitHub: github.com/Anishvish | Book a meeting: calendar.app.google/bf5AxWXvRfhnUFc2A",
+      looking: "Anish is currently open to: Senior Software Engineer, Backend Engineer, Java Developer, Microservices Developer, Cloud Engineer, and Platform Engineering roles. He's focused on Java backend + cloud-native positions.",
+      java: "Anish has deep experience with Java 8 (Streams, Lambdas, Functional interfaces), Java 11 (HttpClient, var, modules), and Java 17 (Records, Sealed classes, Pattern matching). He uses Java daily with Spring Boot for building microservices at enterprise scale.",
+      cloud: "Anish works extensively with Google Cloud Platform: GKE for container orchestration, Cloud Run and App Engine for serverless, Compute Engine for VMs, Pub/Sub for messaging, Dataflow for batch processing, BigQuery for analytics, Bigtable and Firestore for NoSQL, and Cloud Storage for object storage.",
+      ai: "Anish is familiar with AI-assisted development using GitHub Copilot for code completion, Codex for code generation, and is currently learning Spring AI for building AI-powered Java applications. He leverages AI tools to accelerate development while maintaining code quality.",
+      bristlecone: "At Bristlecone (Aug 2021 - Present), Anish works on enterprise integrations connecting platforms like Workday, Oracle, UKG, ServiceNow, and Microsoft Dynamics. He builds Java microservices with Spring Boot, Apache Beam pipelines on Dataflow, and uses Pub/Sub for event-driven architectures on GCP.",
+      autosense: "At Autosense (Jul 2019 - Aug 2021), Anish built cloud-native microservices with Spring Boot on GCP, worked with Docker, Kubernetes, and Bigtable-backed systems. He grew from intern to software engineer, supporting connected platform use cases.",
+      education: "Anish holds a B.E. in Computer Science & Engineering from Er. Perumal Manimekalai College of Engineering with an aggregate of 7.5.",
+      location: "Anish is based in Bengaluru, Karnataka, India and has worked at companies in Bangalore.",
+      resume: "You can view Anish's full resume at: github.com/Anishvish/anishvish/blob/main/RESUME.md — It covers his complete professional experience, technical skills, projects, and education.",
+      playsprint: "PlaySprint is a browser-based game platform built with React, TypeScript, and Vite. It features canvas-rendered arcade games like Bullet Storm (shooting gallery) and Lane Dash (endless runner) with Framer Motion animations.",
+      pulsespend: "PulseSpend is a smart personal expense tracker built with React Native and Expo. It features SMS-based auto-detection of expenses, category tagging, interactive charts, dark mode, and offline-first SQLite storage.",
+    };
+
+    function getResponse(q) {
+      const lower = q.toLowerCase();
+
+      if (/tech|stack|skill|technolog/i.test(lower)) return KB.skills;
+      if (/experience|career|work|history|background|journey/i.test(lower)) return KB.experience;
+      if (/project|built|portfolio|work.*on|github/i.test(lower)) return KB.projects;
+      if (/contact|email|reach|connect|linkedin|hire/i.test(lower)) return KB.contact;
+      if (/looking|role|position|open|seeking|job|opportunity/i.test(lower)) return KB.looking;
+      if (/java\b/i.test(lower)) return KB.java;
+      if (/cloud|gcp|google|kubernetes|k8s|docker/i.test(lower)) return KB.cloud;
+      if (/ai|copilot|codex|artificial|machine|gpt|llm|spring ai/i.test(lower)) return KB.ai;
+      if (/bristlecone/i.test(lower)) return KB.bristlecone;
+      if (/autosense/i.test(lower)) return KB.autosense;
+      if (/education|college|degree|university/i.test(lower)) return KB.education;
+      if (/locat|city|where|based|india|bangalore|bengaluru/i.test(lower)) return KB.location;
+      if (/resume|cv/i.test(lower)) return KB.resume;
+      if (/playsprint|game/i.test(lower)) return KB.playsprint;
+      if (/pulsespend|expense/i.test(lower)) return KB.pulsespend;
+      if (/hello|hi|hey|greet/i.test(lower)) return "Hello! 👋 I'm Anish's AI assistant. Feel free to ask me about his skills, experience, projects, or how to get in touch!";
+      if (/thank/i.test(lower)) return "You're welcome! If you'd like to connect with Anish, feel free to email anishvish5@gmail.com or book a meeting via his calendar. Happy to help! 😊";
+      if (/year|how long/i.test(lower)) return "Anish has 6+ years of professional software engineering experience, starting as an intern in July 2019 and currently serving as a Senior Software Engineer.";
+      if (/spring\s*boot/i.test(lower)) return "Anish uses Spring Boot extensively for building microservices, REST APIs, and enterprise applications. He also uses Spring Cloud for distributed system patterns and is exploring Spring AI for AI integrations.";
+      if (/microservice/i.test(lower)) return "Anish designs and builds microservices architectures using Spring Boot, Spring Cloud, Docker, Kubernetes, and Pub/Sub for event-driven communication. He's worked on microservices for enterprise integrations, connected platforms, and product workflows.";
+
+      return "I can answer questions about Anish's tech stack, experience, projects, cloud skills, AI tooling, education, or how to contact him. Try asking about something specific! 🤔";
+    }
+  })();
+
+  // ═══════════════════════════════════════════════
+  // COMMAND PALETTE (Ctrl+K / Cmd+K)
+  // ═══════════════════════════════════════════════
+  (function () {
+    const overlay = document.getElementById('cmd-overlay');
+    const search = document.getElementById('cmd-search');
+    const results = document.getElementById('cmd-results');
+    const trigger = document.getElementById('cmd-trigger');
+
+    const items = [
+      { icon: '👤', title: 'About', desc: 'Professional summary', action: () => scrollTo('#about') },
+      { icon: '🚀', title: 'Projects', desc: 'Featured project experience', action: () => scrollTo('#projects') },
+      { icon: '💼', title: 'Experience', desc: 'Career highlights', action: () => scrollTo('#experience') },
+      { icon: '📬', title: 'Contact', desc: 'Get in touch', action: () => scrollTo('#contact') },
+      { icon: '⚡', title: 'Status', desc: 'What Anish is currently doing', action: () => scrollTo('#status') },
+      { icon: '📧', title: 'Email Anish', desc: 'anishvish5@gmail.com', action: () => window.location.href = 'mailto:anishvish5@gmail.com' },
+      { icon: '📅', title: 'Book a Meeting', desc: 'Schedule a conversation', action: () => window.open('https://calendar.app.google/bf5AxWXvRfhnUFc2A', '_blank') },
+      { icon: '💼', title: 'LinkedIn', desc: 'linkedin.com/in/anishvish', action: () => window.open('https://www.linkedin.com/in/anishvish', '_blank') },
+      { icon: '🐙', title: 'GitHub', desc: 'github.com/Anishvish', action: () => window.open('https://github.com/Anishvish', '_blank') },
+      { icon: '📄', title: 'View Resume', desc: 'Full RESUME.md on GitHub', action: () => window.open('https://github.com/Anishvish/anishvish/blob/main/RESUME.md', '_blank') },
+      { icon: '🌗', title: 'Toggle Dark Mode', desc: 'Switch between light and dark theme', action: () => document.getElementById('theme-toggle').click() },
+      { icon: '💬', title: 'Open AI Chat', desc: 'Ask questions about Anish', action: () => document.getElementById('chat-fab').click() },
+      { icon: '☕', title: 'Java Skills', desc: 'Java 8, 11, 17, Spring Boot, Hibernate', action: () => scrollTo('#about') },
+      { icon: '☁️', title: 'Cloud Skills', desc: 'GCP, Kubernetes, Docker, Pub/Sub', action: () => scrollTo('#about') },
+      { icon: '🎮', title: 'PlaySprint', desc: 'Browser game platform project', action: () => window.open('https://github.com/Anishvish/PlaySprint', '_blank') },
+      { icon: '💰', title: 'PulseSpend', desc: 'Smart expense tracker project', action: () => window.open('https://github.com/Anishvish/PulseSpend', '_blank') },
+      { icon: '🤖', title: 'AI Invoice Generator', desc: 'AI-powered invoicing MVP', action: () => window.open('https://github.com/Anishvish/ai-invoice-estimation-generator', '_blank') },
+    ];
+
+    let activeIdx = 0;
+
+    function openPalette() {
+      overlay.classList.add('open');
+      search.value = '';
+      search.focus();
+      renderItems('');
+    }
+
+    function closePalette() {
+      overlay.classList.remove('open');
+    }
+
+    function scrollTo(sel) {
+      closePalette();
+      const el = document.querySelector(sel);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderItems(query) {
+      const q = query.toLowerCase();
+      const filtered = items.filter(i =>
+        i.title.toLowerCase().includes(q) ||
+        i.desc.toLowerCase().includes(q)
+      );
+      activeIdx = 0;
+      results.innerHTML = filtered.map((item, i) => `
+        <div class="cmd-item ${i === 0 ? 'active' : ''}" data-idx="${i}">
+          <span class="cmd-item-icon">${item.icon}</span>
+          <div class="cmd-item-text">
+            <strong>${item.title}</strong>
+            <span>${item.desc}</span>
+          </div>
+        </div>
+      `).join('');
+
+      results.querySelectorAll('.cmd-item').forEach((el, i) => {
+        el.addEventListener('click', () => {
+          filtered[i].action();
+          closePalette();
+        });
+        el.addEventListener('mouseenter', () => {
+          results.querySelectorAll('.cmd-item').forEach(e => e.classList.remove('active'));
+          el.classList.add('active');
+          activeIdx = i;
+        });
+      });
+
+      // Store reference for keyboard nav
+      results._filtered = filtered;
+    }
+
+    search.addEventListener('input', (e) => renderItems(e.target.value));
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        if (overlay.classList.contains('open')) closePalette();
+        else openPalette();
+      }
+      if (e.key === 'Escape' && overlay.classList.contains('open')) {
+        closePalette();
+      }
+      if (overlay.classList.contains('open')) {
+        const items = results.querySelectorAll('.cmd-item');
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          activeIdx = Math.min(activeIdx + 1, items.length - 1);
+          items.forEach(e => e.classList.remove('active'));
+          items[activeIdx]?.classList.add('active');
+          items[activeIdx]?.scrollIntoView({ block: 'nearest' });
+        }
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          activeIdx = Math.max(activeIdx - 1, 0);
+          items.forEach(e => e.classList.remove('active'));
+          items[activeIdx]?.classList.add('active');
+          items[activeIdx]?.scrollIntoView({ block: 'nearest' });
+        }
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const filtered = results._filtered;
+          if (filtered && filtered[activeIdx]) {
+            filtered[activeIdx].action();
+            closePalette();
+          }
+        }
+      }
+    });
+
+    trigger.addEventListener('click', openPalette);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closePalette();
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // PAGE PRELOADER
+  // ═══════════════════════════════════════════════
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('hidden');
+    }, 1400);
+  });
+
+  // ═══════════════════════════════════════════════
+  // MOBILE HAMBURGER MENU
+  // ═══════════════════════════════════════════════
+  (function () {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const overlay = document.getElementById('mobile-overlay');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+      overlay.classList.toggle('active');
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+      overlay.classList.remove('active');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // AUTO COPYRIGHT YEAR
+  // ═══════════════════════════════════════════════
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
