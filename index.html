@@ -21,6 +21,17 @@
     <span class="preloader-logo">AV</span>
     <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
   </div>
+  <script>
+    (function () {
+      function hidePreloader() {
+        document.getElementById('preloader')?.classList.add('hidden');
+      }
+
+      window.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 650), { once: true });
+      window.addEventListener('load', () => setTimeout(hidePreloader, 250), { once: true });
+      setTimeout(hidePreloader, 1800);
+    })();
+  </script>
 
   <!-- Mobile Overlay -->
   <div class="mobile-overlay" id="mobile-overlay"></div>
@@ -113,7 +124,7 @@
       <div class="hero-grid">
         <section class="hero-copy">
           <p class="eyebrow">Senior Software Engineer | Backend Engineer | Java Developer</p>
-          <h1 id="hero-headline"></h1>
+          <h1 id="hero-headline">Building backend systems that hold up in production.</h1>
           <p class="hero-text">
             I have 6+ years of experience working across Java 8, Java 11, Java 17, Spring Boot, microservices, Google Cloud Platform,
             batch processing, enterprise integrations, and data-intensive applications.
@@ -161,15 +172,15 @@
           </div>
           <div class="card-stats">
             <div>
-              <strong data-count="6">0</strong>
+              <strong data-count="6">6</strong>
               <span>Years+</span>
             </div>
             <div>
-              <strong data-count="2">0</strong>
+              <strong data-count="2">2</strong>
               <span>Companies</span>
             </div>
             <div>
-              <strong data-count="10">0</strong>
+              <strong data-count="10">10</strong>
               <span>Core Tools+</span>
             </div>
           </div>
@@ -586,15 +597,15 @@
         </div>
         <div class="github-cards reveal-stagger">
           <div class="github-stat-card">
-            <span class="github-stat-number" data-count="5">0</span>
+            <span class="github-stat-number" data-count="5">5</span>
             <span class="github-stat-label">Public Projects</span>
           </div>
           <div class="github-stat-card">
-            <span class="github-stat-number" data-count="5">0</span>
+            <span class="github-stat-number" data-count="5">5</span>
             <span class="github-stat-label">Tech Stacks</span>
           </div>
           <div class="github-stat-card">
-            <span class="github-stat-number" data-count="3">0</span>
+            <span class="github-stat-number" data-count="3">3</span>
             <span class="github-stat-label">Languages</span>
           </div>
         </div>
@@ -642,23 +653,12 @@
 
   <script>
   // ═══════════════════════════════════════════════
-  // TYPING EFFECT
+  // HERO HEADLINE SAFETY
   // ═══════════════════════════════════════════════
   (function () {
     const el = document.getElementById('hero-headline');
-    const text = "Building backend systems, cloud services, and integration platforms that hold up in production.";
-    let i = 0;
-    el.classList.add('typing-cursor');
-    function type() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, 28 + Math.random() * 22);
-      } else {
-        setTimeout(() => el.classList.remove('typing-cursor'), 1500);
-      }
-    }
-    setTimeout(type, 600);
+    const text = "Building backend systems that hold up in production.";
+    if (el && !el.textContent.trim()) el.textContent = text;
   })();
 
   // ═══════════════════════════════════════════════
@@ -681,28 +681,9 @@
   // ANIMATED COUNTERS
   // ═══════════════════════════════════════════════
   (function () {
-    const counters = document.querySelectorAll('[data-count]');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const el = e.target;
-          const target = parseInt(el.dataset.count);
-          let current = 0;
-          const step = () => {
-            current += target / 40;
-            if (current < target) {
-              el.textContent = Math.floor(current);
-              requestAnimationFrame(step);
-            } else {
-              el.textContent = target;
-            }
-          };
-          requestAnimationFrame(step);
-          obs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(el => obs.observe(el));
+    document.querySelectorAll('[data-count]').forEach(el => {
+      el.textContent = el.dataset.count;
+    });
   })();
 
   // ═══════════════════════════════════════════════
