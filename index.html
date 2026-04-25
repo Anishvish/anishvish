@@ -9,6 +9,7 @@
   <meta property="og:title" content="Anish Vishwakarma | Senior Software Engineer">
   <meta property="og:description" content="Senior Software Engineer with 6+ years of experience building scalable backend systems, enterprise integrations, and cloud-native services.">
   <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f766e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,14 +25,14 @@
   <!-- Mobile Overlay -->
   <div class="mobile-overlay" id="mobile-overlay"></div>
   <!-- Custom Cursor -->
-  <div class="cursor-dot" id="cursor-dot"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
   <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
   <!-- Particle Canvas -->
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
@@ -86,9 +87,9 @@
   </div>
 
   <div class="page-shell">
-    <div class="ambient ambient-one"></div>
-    <div class="ambient ambient-two"></div>
-    <div class="ambient ambient-three"></div>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="ambient ambient-three" aria-hidden="true"></div>
 
     <header class="hero">
       <nav class="topbar" id="topbar">
@@ -695,10 +696,39 @@
   // ═══════════════════════════════════════════════
   (function () {
     const bar = document.getElementById('scroll-progress');
-    window.addEventListener('scroll', () => {
+    const topbar = document.getElementById('topbar');
+    const navItems = Array.from(document.querySelectorAll('#nav-links a[href^="#"]'));
+    const sections = navItems
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+    let ticking = false;
+
+    function updateScrollState() {
       const h = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (window.scrollY / h * 100) + '%';
-    }, { passive: true });
+      bar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+      topbar.classList.toggle('scrolled', window.scrollY > 18);
+
+      const active = sections
+        .filter(section => section.offsetTop <= window.scrollY + 180)
+        .pop();
+
+      navItems.forEach(link => {
+        link.classList.toggle('active', active && link.getAttribute('href') === '#' + active.id);
+      });
+
+      ticking = false;
+    }
+
+    function requestScrollState() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestScrollState, { passive: true });
+    window.addEventListener('resize', requestScrollState);
+    requestScrollState();
   })();
 
   // ═══════════════════════════════════════════════
@@ -734,10 +764,12 @@
   // CUSTOM CURSOR
   // ═══════════════════════════════════════════════
   (function () {
-    if (window.innerWidth < 900) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (window.innerWidth < 900 || reduceMotion.matches) return;
     const dot = document.getElementById('cursor-dot');
     const ring = document.getElementById('cursor-ring');
     let mx = 0, my = 0, rx = 0, ry = 0;
+    let cursorFrame;
 
     document.addEventListener('mousemove', (e) => {
       mx = e.clientX;
@@ -751,9 +783,14 @@
       ry += (my - ry) * 0.15;
       ring.style.left = rx + 'px';
       ring.style.top = ry + 'px';
-      requestAnimationFrame(animateRing);
+      cursorFrame = requestAnimationFrame(animateRing);
     }
     animateRing();
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(cursorFrame);
+      else animateRing();
+    });
 
     const hoverEls = document.querySelectorAll('a, button, .logo-card, .highlight-card, .impact-card, .capability-card, .project-card, .skill-group, .timeline-card, .mini-panel, .signal-card, .pill, .badge-strip-inner span, .contact-links a, .chat-suggestion');
     hoverEls.forEach(el => {
@@ -773,9 +810,15 @@
   // ═══════════════════════════════════════════════
   (function () {
     const canvas = document.getElementById('particle-canvas');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!canvas || reduceMotion.matches) {
+      if (canvas) canvas.style.display = 'none';
+      return;
+    }
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const COUNT = 35;
+    let animationFrame;
+    const COUNT = window.innerWidth < 768 ? 16 : 30;
 
     function resize() {
       canvas.width = window.innerWidth;
@@ -829,9 +872,17 @@
           }
         }
       }
-      requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
     }
     animate();
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrame);
+      } else {
+        animate();
+      }
+    });
   })();
 
   // ═══════════════════════════════════════════════
