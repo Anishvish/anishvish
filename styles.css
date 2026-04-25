@@ -1083,43 +1083,63 @@ li {
   animation-delay: 800ms;
 }
 
-.orbit {
+.scene-tech-stack {
   position: absolute;
-  display: grid;
-  place-items: center;
-  width: 72px;
-  height: 72px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
+  top: 16px;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: min(92%, 270px);
+  transform: translateX(-50%);
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
   color: #ecfeff;
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  animation: techChipFloat 4.6s ease-in-out infinite;
 }
 
-.orbit span {
-  animation: counterSpin 10s linear infinite;
+.tech-chip::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #86efac;
+  box-shadow: 0 0 12px rgba(134, 239, 172, 0.8);
 }
 
-.orbit-one {
-  top: 18px;
-  right: 28px;
-  animation: orbitFloat 5.2s ease-in-out infinite;
+.spring-chip {
+  animation-delay: 180ms;
 }
 
-.orbit-two {
-  right: 18px;
-  bottom: 24px;
-  animation: orbitFloat 5.8s ease-in-out infinite 200ms;
+.spring-chip::before {
+  background: #bef264;
+  box-shadow: 0 0 12px rgba(190, 242, 100, 0.8);
 }
 
-.orbit-three {
-  left: 30px;
-  bottom: 28px;
-  animation: orbitFloat 6.2s ease-in-out infinite 420ms;
+.gcp-chip {
+  animation-delay: 360ms;
+}
+
+.gcp-chip::before {
+  background: #93c5fd;
+  box-shadow: 0 0 12px rgba(147, 197, 253, 0.85);
 }
 
 /* ─── Currently Status ─── */
@@ -2249,14 +2269,9 @@ ul {
   100% { transform: translateX(112px) scale(1); opacity: 0; }
 }
 
-@keyframes orbitFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(3deg); }
-}
-
-@keyframes counterSpin {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+@keyframes techChipFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes gridDrift {
@@ -2367,10 +2382,15 @@ ul {
     width: 82px;
   }
 
-  .orbit {
-    width: 62px;
-    height: 62px;
-    font-size: 0.66rem;
+  .scene-tech-stack {
+    width: 94%;
+    gap: 6px;
+  }
+
+  .tech-chip {
+    min-height: 28px;
+    padding: 6px 9px;
+    font-size: 0.64rem;
   }
 
   .logo-grid {
