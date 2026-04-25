@@ -180,6 +180,35 @@
               <p>Java, Spring Boot, Microservices, GCP</p>
             </div>
           </div>
+          <div class="engineer-scene" aria-label="Animated backend engineering workflow">
+            <div class="scene-grid" aria-hidden="true"></div>
+            <div class="orbit orbit-one" aria-hidden="true">
+              <span>Java 17</span>
+            </div>
+            <div class="orbit orbit-two" aria-hidden="true">
+              <span>Spring</span>
+            </div>
+            <div class="orbit orbit-three" aria-hidden="true">
+              <span>GCP</span>
+            </div>
+            <div class="pipeline pipeline-left" aria-hidden="true"></div>
+            <div class="pipeline pipeline-right" aria-hidden="true"></div>
+            <div class="engineer-avatar" aria-hidden="true">
+              <span class="avatar-head"></span>
+              <span class="avatar-body"></span>
+              <span class="avatar-arm avatar-arm-left"></span>
+              <span class="avatar-arm avatar-arm-right"></span>
+            </div>
+            <div class="code-console" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="laptop" aria-hidden="true">
+              <span class="laptop-screen"></span>
+              <span class="laptop-base"></span>
+            </div>
+          </div>
         </aside>
       </div>
     </header>
@@ -741,6 +770,30 @@
     }, { passive: true });
     btn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // HERO CARD TILT
+  // ═══════════════════════════════════════════════
+  (function () {
+    const card = document.querySelector('.hero-card');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!card || window.innerWidth < 900 || reduceMotion.matches) return;
+
+    card.classList.add('tilt-ready');
+
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      card.style.setProperty('--hero-tilt-x', `${x * 7}deg`);
+      card.style.setProperty('--hero-tilt-y', `${y * -7}deg`);
+    });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--hero-tilt-x', '0deg');
+      card.style.setProperty('--hero-tilt-y', '0deg');
     });
   })();
 
