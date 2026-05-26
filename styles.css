@@ -3155,134 +3155,123 @@ ul {
 /* ═══════════════════════════════════════════════
    PRINT STYLES OVERRIDES
    ═══════════════════════════════════════════════ */
-@media print {
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 10pt !important;
-    line-height: 1.4 !important;
-  }
+.print-resume-container {
+  display: none;
+}
 
+@media print {
+  /* Hide the entire website UI */
+  .page-shell,
+  .project-modal,
+  #project-modal,
   .preloader,
   .cursor-dot,
   .cursor-ring,
-  .scroll-progress,
-  .back-to-top,
   .chat-fab,
   .chat-window,
   .cmd-overlay,
-  .theme-toggle,
-  .kbd-hint,
-  .hamburger,
-  .mobile-overlay,
-  .sys-monitor-widget,
-  #sandbox,
-  #gcp-pipeline,
-  .tech-filter-bar,
-  .badge-strip,
-  .engineer-scene,
-  .recruiter-toggle-container,
-  .button,
-  button,
-  .ambient,
-  .wave-divider,
-  .github-graph {
+  #mobile-overlay {
     display: none !important;
   }
 
-  .page-shell {
-    max-width: 100% !important;
-    padding: 0 !important;
+  /* Display the print-only resume */
+  .print-resume-container {
+    display: block !important;
+    font-family: "Times New Roman", Times, serif, Arial, sans-serif !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    padding: 30px 40px !important;
     margin: 0 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
   }
 
-  .topbar {
-    position: static !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: none !important;
-    margin-bottom: 12px !important;
+  .resume-print-header {
+    text-align: center;
+    margin-bottom: 20px;
   }
 
-  .nav-links {
-    display: none !important;
+  .resume-print-name {
+    font-size: 20pt !important;
+    font-weight: bold;
+    margin: 0 0 5px 0 !important;
+    color: #000000 !important;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
+  .resume-print-contact {
+    font-size: 9.5pt !important;
+    color: #333333 !important;
   }
 
-  .hero-copy {
-    padding: 0 !important;
-    border: none !important;
-    background: none !important;
-    box-shadow: none !important;
+  .resume-print-section {
+    margin-top: 18px;
+    page-break-inside: avoid;
   }
 
-  .hero-card {
-    display: none !important;
+  .resume-print-section-title {
+    font-size: 11pt !important;
+    font-weight: bold;
+    margin: 0 !important;
+    color: #000000 !important;
+    letter-spacing: 0.5px;
   }
 
-  .section {
-    margin-top: 14px !important;
-    page-break-inside: avoid !important;
+  .resume-print-divider {
+    border: none;
+    border-top: 1px solid #000000 !important;
+    margin: 3px 0 8px 0 !important;
   }
 
-  .panel,
-  .timeline-card,
-  .mini-panel,
-  .contact-panel {
-    border: none !important;
-    background: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
+  .resume-print-text {
+    margin: 0 !important;
+    font-size: 10pt !important;
+    text-align: justify;
   }
 
-  .highlight-grid,
-  .skills-columns,
-  .project-grid,
-  .impact-grid,
-  .logo-grid {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
+  .resume-print-skills-list,
+  .resume-print-job-bullets,
+  .resume-print-project-bullets {
+    margin: 0 !important;
+    padding-left: 20px !important;
+    font-size: 10pt !important;
   }
 
-  .highlight-card,
-  .impact-card,
-  .logo-card,
-  .skill-group,
-  .project-card {
-    border: 1px solid #ddd !important;
-    background: #fff !important;
-    box-shadow: none !important;
-    padding: 10px !important;
+  .resume-print-skills-list li,
+  .resume-print-job-bullets li,
+  .resume-print-project-bullets li {
+    margin-bottom: 4px !important;
+    color: #000000 !important;
   }
 
-  .logo-card {
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    min-height: auto !important;
-    gap: 8px !important;
+  .resume-print-job {
+    margin-bottom: 12px;
+    page-break-inside: avoid;
   }
 
-  .logo-card img {
-    width: 20px !important;
-    height: 20px !important;
+  .resume-print-job-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt !important;
+    font-weight: bold;
   }
 
-  .site-footer {
-    display: none !important;
+  .resume-print-job-date {
+    font-weight: bold;
   }
 
-  .footer-copyright {
-    margin-top: 20px !important;
-    border-top: 1px solid #ccc !important;
-    padding-top: 8px !important;
-    font-size: 8pt !important;
-    color: #666 !important;
+  .resume-print-job-subrole {
+    font-size: 9.5pt !important;
+    margin-bottom: 5px;
+  }
+
+  .resume-print-education {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt !important;
+  }
+
+  .resume-print-edu-date {
+    font-weight: bold;
   }
 }
 
