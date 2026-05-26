@@ -18,18 +18,73 @@
 <body>
   <!-- Preloader -->
   <div class="preloader" id="preloader">
-    <span class="preloader-logo">AV</span>
-    <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+    <div class="preloader-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-title">spring-boot-server.log</div>
+        <button class="skip-preloader" id="skip-preloader">Skip Boot</button>
+      </div>
+      <div class="terminal-body" id="preloader-terminal-body"></div>
+    </div>
   </div>
   <script>
     (function () {
+      const preloader = document.getElementById('preloader');
+      const termBody = document.getElementById('preloader-terminal-body');
+      const skipBtn = document.getElementById('skip-preloader');
+      
+      if (!preloader || !termBody) return;
+
       function hidePreloader() {
-        document.getElementById('preloader')?.classList.add('hidden');
+        preloader.classList.add('hidden');
       }
 
-      window.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 650), { once: true });
-      window.addEventListener('load', () => setTimeout(hidePreloader, 250), { once: true });
-      setTimeout(hidePreloader, 1800);
+      skipBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hidePreloader();
+      });
+
+      const lines = [
+        '<span class="pl-ascii">  .   ____          _            __ _ _</span>',
+        '<span class="pl-ascii"> /\\\\ / ___\'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\</span>',
+        '<span class="pl-ascii">( ( )\\___ | \'_ | \'_| | \'_ \\/ _` | \\ \\ \\ \\</span>',
+        '<span class="pl-ascii"> \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span>',
+        '<span class="pl-ascii">  \'  |____| .__|_| |_|_| |_\\__, | / / / /</span>',
+        '<span class="pl-ascii"> =========|_|==============|___/=/_/_/_/</span>',
+        '<span class="pl-brand"> :: Spring Boot ::        (v3.2.0)</span>',
+        '',
+        '<span class="pl-date">2026-05-23 16:30:12.012</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.PortfolioApplication</span> <span class="pl-msg">: Starting PortfolioApplication using Java 17...</span>',
+        '<span class="pl-date">2026-05-23 16:30:12.235</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.p.c.GCPConnector</span>     <span class="pl-msg">: Connecting to GCP project: <span class="pl-val">anishvish</span>...</span>',
+        '<span class="pl-date">2026-05-23 16:30:12.440</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.p.c.GCPConnector</span>     <span class="pl-msg">: GCP credentials validated. Connected successfully.</span>',
+        '<span class="pl-date">2026-05-23 16:30:12.601</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.p.s.SkillsService</span>    <span class="pl-msg">: Loaded 15 tech stack records, 24 active competencies.</span>',
+        '<span class="pl-date">2026-05-23 16:30:12.822</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.p.s.ProjectService</span>   <span class="pl-msg">: Discovered 5 projects, indexing local repositories...</span>',
+        '<span class="pl-date">2026-05-23 16:30:12.980</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.p.c.TomcatServer</span>     <span class="pl-msg">: Tomcat initialized on port 8080 (http).</span>',
+        '<span class="pl-date">2026-05-23 16:30:13.102</span> <span class="pl-info">INFO</span> <span class="pl-pid">18504</span> <span class="pl-dash">---</span> <span class="pl-thread">[           main]</span> <span class="pl-class">a.v.PortfolioApplication</span> <span class="pl-msg">: Started PortfolioApplication in 1.48 seconds (JVM running for 1.95)</span>'
+      ];
+
+      let currentLine = 0;
+      function printLine() {
+        if (preloader.classList.contains('hidden')) return;
+        if (currentLine < lines.length) {
+          const p = document.createElement('p');
+          p.className = 'terminal-line';
+          p.innerHTML = lines[currentLine];
+          termBody.appendChild(p);
+          termBody.scrollTop = termBody.scrollHeight;
+          currentLine++;
+          const delay = currentLine <= 7 ? 25 : 80 + Math.random() * 50;
+          setTimeout(printLine, delay);
+        } else {
+          setTimeout(hidePreloader, 400);
+        }
+      }
+
+      setTimeout(printLine, 100);
+      setTimeout(hidePreloader, 4500); // Fail-safe
     })();
   </script>
 
@@ -149,6 +204,7 @@
             <a class="button primary" href="mailto:anishvish5@gmail.com">Contact Me</a>
             <a class="button accent" href="https://calendar.app.google/bf5AxWXvRfhnUFc2A" target="_blank" rel="noreferrer">Book a Meeting</a>
             <a class="button secondary" href="https://github.com/Anishvish/anishvish/blob/main/RESUME.md" target="_blank" rel="noreferrer">View Resume</a>
+            <button class="button secondary" id="print-resume-btn">🖨️ Print Resume</button>
           </div>
 
           <div class="badge-row">
@@ -156,6 +212,13 @@
             <span class="pill">Java + Spring Boot</span>
             <span class="pill">Microservices</span>
             <span class="pill">Google Cloud Platform</span>
+          </div>
+
+          <div class="recruiter-toggle-container">
+            <span>Recruiter Quick Scan?</span>
+            <button class="recruiter-toggle-btn" id="recruiter-mode-toggle" aria-label="Toggle Recruiter Quick Scan Mode">
+              Toggle Scan Mode
+            </button>
           </div>
         </section>
 
@@ -249,21 +312,94 @@
         </div>
       </div>
 
+      <!-- API Sandbox Terminal Section -->
+      <section class="section reveal" id="sandbox">
+        <div class="section-heading">
+          <p class="eyebrow">API Sandbox</p>
+          <h2>Interactive Developer Terminal</h2>
+        </div>
+        <div class="terminal-widget">
+          <div class="terminal-widget-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-widget-title">guest@anishvish.dev:~</div>
+            <div class="terminal-widget-actions">
+              <button class="terminal-action-btn" data-cmd="help">help</button>
+              <button class="terminal-action-btn" data-cmd="curl skills">curl skills</button>
+              <button class="terminal-action-btn" data-cmd="curl experience">curl experience</button>
+              <button class="terminal-action-btn" data-cmd="curl projects">curl projects</button>
+              <button class="terminal-action-btn" data-cmd="clear">clear</button>
+            </div>
+          </div>
+          <div class="terminal-widget-body" id="sandbox-body">
+            <p class="terminal-output">Welcome to Anish's interactive profile sandbox. Type a command or click the shortcuts above. 💻</p>
+            <p class="terminal-output">Type <span class="highlight-cmd">help</span> to list available endpoints/commands.</p>
+            <div class="terminal-input-line">
+              <span class="terminal-prompt">guest@anishvish.dev:~$</span>
+              <input type="text" class="terminal-input" id="sandbox-input" placeholder="Type command..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+
+        <!-- System Performance Monitor Widget -->
+        <div class="sys-monitor-widget">
+          <div class="sys-monitor-header">
+            <div class="sys-monitor-title">
+              <span class="sys-health-dot"></span>
+              <span>SYSTEM PERFORMANCE MONITOR (anish-profile-service-v1)</span>
+            </div>
+            <div class="sys-monitor-status" style="color: #23c55e; font-size: 0.75rem; font-weight: bold;">STATUS: HEALTHY</div>
+          </div>
+          <div class="sys-monitor-body">
+            <div class="sys-stat-card">
+              <span class="sys-stat-label">Uptime</span>
+              <span class="sys-stat-value" id="sys-uptime">00:00:00</span>
+            </div>
+            <div class="sys-stat-card">
+              <span class="sys-stat-label">CPU Load</span>
+              <span class="sys-stat-value" id="sys-cpu">3.5%</span>
+            </div>
+            <div class="sys-stat-card">
+              <span class="sys-stat-label">API Latency</span>
+              <span class="sys-stat-value" id="sys-latency">14ms</span>
+            </div>
+            <div class="sys-stat-card">
+              <span class="sys-stat-label">JVM Memory</span>
+              <span class="sys-stat-value">148MB / 512MB</span>
+            </div>
+            <div class="sys-stat-chart-container">
+              <svg class="sys-chart-svg">
+                <path class="sys-chart-area" id="sys-chart-area" d="" />
+                <path class="sys-chart-path" id="sys-chart-path" d="" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section reveal" id="about">
         <div class="section-heading">
           <p class="eyebrow">Profile</p>
           <h2>Professional Summary</h2>
         </div>
         <div class="panel">
-          <p>
-            Senior Software Engineer with 6+ years of experience in backend development, Java application development,
-            microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java,
-            including Java 8, Java 11, and Java 17, Spring Boot, J2EE, RESTful API development, Hibernate, JUnit, Mockito, Google Cloud Platform,
-            Kubernetes, Docker, Apache Beam, CI/CD practices, and data processing systems.
-          </p>
-          <p>
-            My experience includes Senior Software Engineer and Consultant roles at Bristlecone, and Software Engineer and Intern roles at Autosense Private Limited. I have worked on Java microservices, Apache Beam pipelines, GCP-based systems, and event-driven backend applications. I am also familiar with AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex.
-          </p>
+          <div class="recruiter-hide">
+            <p>
+              Senior Software Engineer with 6+ years of experience in backend development, Java application development,
+              microservices, cloud-native engineering, and enterprise integration. Strong expertise in Java,
+              including Java 8, Java 11, and Java 17, Spring Boot, J2EE, RESTful API development, Hibernate, JUnit, Mockito, Google Cloud Platform,
+              Kubernetes, Docker, Apache Beam, CI/CD practices, and data processing systems.
+            </p>
+            <p>
+              My experience includes Senior Software Engineer and Consultant roles at Bristlecone, and Software Engineer and Intern roles at Autosense Private Limited. I have worked on Java microservices, Apache Beam pipelines, GCP-based systems, and event-driven backend applications. I am also familiar with AI-assisted development workflows using GitHub Copilot, Antigravity, and Codex.
+            </p>
+          </div>
+          <div class="recruiter-show recruiter-highlight">
+            <strong>⚡ Quick Summary:</strong> Senior Backend & Cloud Engineer with <strong>6+ years of experience</strong> specializing in <strong>Java 17, Spring Boot, Microservices, and Google Cloud Platform (GCP)</strong>. Proven track record progressing from Intern to Senior Engineer, designing high-throughput Apache Beam pipelines, containerized GKE services, and automated onboarding integrations.
+          </div>
         </div>
       </section>
 
@@ -316,41 +452,50 @@
         </div>
       </section>
 
-      <section class="section reveal">
+      <section class="section reveal" id="tech-stack-section">
         <div class="section-heading">
           <p class="eyebrow">Technology</p>
           <h2>Tech Stack</h2>
         </div>
-        <div class="logo-grid reveal-stagger">
-          <article class="logo-card">
+        
+        <div class="tech-filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="cloud">Cloud &amp; DevOps</button>
+          <button class="filter-btn" data-filter="database">Databases</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+        </div>
+
+        <div class="logo-grid reveal-stagger" id="tech-logo-grid">
+          <article class="logo-card" data-category="backend">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
             <span>Java</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="backend">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
             <span>Spring Boot</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="cloud">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud">
             <span>Google Cloud</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="cloud">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
             <span>Kubernetes</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="cloud">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
             <span>Docker</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="database">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
             <span>PostgreSQL</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="database">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
             <span>Redis</span>
           </article>
-          <article class="logo-card">
+          <article class="logo-card" data-category="frontend">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
             <span>React</span>
           </article>
@@ -371,23 +516,68 @@
         <div class="skills-columns reveal-stagger">
           <article class="skill-group">
             <h3>Backend</h3>
-            <p>Java 8, Java 11, Java 17, Spring Boot, Spring Cloud, J2EE, RESTful APIs, Hibernate</p>
+            <p>Java 8/11/17, Spring Boot, Hibernate, Spring Cloud</p>
+            <div class="skill-progress-wrapper">
+              <div class="skill-progress-info">
+                <span>Proficiency</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-fill" data-percent="95"></div>
+              </div>
+            </div>
           </article>
           <article class="skill-group">
-            <h3>Cloud</h3>
-            <p>Google Cloud Platform, GKE, Cloud Run, App Engine, Compute Engine, Cloud Storage, Pub/Sub</p>
+            <h3>Cloud (GCP)</h3>
+            <p>GKE, Cloud Run, Pub/Sub, App Engine</p>
+            <div class="skill-progress-wrapper">
+              <div class="skill-progress-info">
+                <span>Proficiency</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-fill" data-percent="90"></div>
+              </div>
+            </div>
           </article>
           <article class="skill-group">
-            <h3>Data</h3>
-            <p>Apache Beam, Dataflow, BigQuery, Bigtable, Firestore, Redis, PostgreSQL</p>
+            <h3>Data Processing</h3>
+            <p>Apache Beam, Dataflow, BigQuery, Bigtable</p>
+            <div class="skill-progress-wrapper">
+              <div class="skill-progress-info">
+                <span>Proficiency</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-fill" data-percent="85"></div>
+              </div>
+            </div>
           </article>
           <article class="skill-group">
             <h3>DevOps</h3>
-            <p>Docker, Kubernetes, Jenkins, Maven, CI/CD, GitHub, Bitbucket, Git</p>
+            <p>Docker, Kubernetes, Jenkins, Maven CI/CD</p>
+            <div class="skill-progress-wrapper">
+              <div class="skill-progress-info">
+                <span>Proficiency</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-fill" data-percent="85"></div>
+              </div>
+            </div>
           </article>
           <article class="skill-group">
-            <h3>AI & Quality</h3>
-            <p>GitHub Copilot, Codex, JUnit, Mockito, SonarQube, Fortify, Spring AI</p>
+            <h3>AI &amp; Quality</h3>
+            <p>Spring AI, Copilot, JUnit, SonarQube</p>
+            <div class="skill-progress-wrapper">
+              <div class="skill-progress-info">
+                <span>Proficiency</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-fill" data-percent="80"></div>
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -428,6 +618,71 @@
         </div>
       </section>
 
+      <!-- GCP Data Pipeline Simulator Section -->
+      <section class="section reveal" id="gcp-pipeline">
+        <div class="section-heading">
+          <p class="eyebrow">Cloud Architecture</p>
+          <h2>Interactive GCP Pipeline Simulator</h2>
+        </div>
+        <div class="pipeline-widget panel">
+          <p class="pipeline-desc">
+            Anish designs event-driven architectures and distributed batch/stream data pipelines on GCP.
+            Click <strong>"Publish Ingestion Event"</strong> below to trigger a mock event and watch it flow through the cloud infrastructure in real-time.
+          </p>
+          
+          <div class="pipeline-flow-container">
+            <div class="pipeline-node" id="node-client">
+              <div class="node-icon">📱</div>
+              <div class="node-label">Client App</div>
+              <div class="node-status">Idle</div>
+            </div>
+            
+            <div class="pipeline-connector">
+              <svg class="connector-line"><line x1="0" y1="50%" x2="100%" y2="50%" /></svg>
+              <span class="pipeline-packet" id="packet-1"></span>
+            </div>
+            
+            <div class="pipeline-node" id="node-pubsub">
+              <div class="node-icon">📡</div>
+              <div class="node-label">Cloud Pub/Sub</div>
+              <div class="node-status">Ready</div>
+            </div>
+            
+            <div class="pipeline-connector">
+              <svg class="connector-line"><line x1="0" y1="50%" x2="100%" y2="50%" /></svg>
+              <span class="pipeline-packet" id="packet-2"></span>
+            </div>
+            
+            <div class="pipeline-node" id="node-dataflow">
+              <div class="node-icon">⚙️</div>
+              <div class="node-label">Apache Beam / Dataflow</div>
+              <div class="node-status">Ready</div>
+            </div>
+            
+            <div class="pipeline-connector">
+              <svg class="connector-line"><line x1="0" y1="50%" x2="100%" y2="50%" /></svg>
+              <span class="pipeline-packet" id="packet-3"></span>
+            </div>
+            
+            <div class="pipeline-node" id="node-bigquery">
+              <div class="node-icon">📊</div>
+              <div class="node-label">BigQuery / Firestore</div>
+              <div class="node-status">Ready</div>
+            </div>
+          </div>
+          
+          <div class="pipeline-controls">
+            <button class="button primary" id="trigger-pipeline-btn">🚀 Publish Ingestion Event</button>
+            <div class="pipeline-log-console">
+              <div class="pipeline-log-header">Pipeline System Logs</div>
+              <div class="pipeline-log-body" id="pipeline-log-body">
+                <p class="log-line system">[System] Pipeline initialized. Ready for ingestion event.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section reveal" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Selected Work</p>
@@ -443,6 +698,7 @@
               <li>AI-assisted parsing, GST-ready invoicing, PDF generation</li>
               <li><a href="https://github.com/Anishvish/ai-invoice-estimation-generator" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
+            <button class="button secondary view-project-details" data-project="ai-invoice">View Details</button>
           </article>
           <article class="project-card project-featured">
             <p class="project-tag">Game Platform</p>
@@ -453,6 +709,7 @@
               <li>Bullet Storm and Lane Dash with real-time canvas rendering</li>
               <li><a href="https://github.com/Anishvish/PlaySprint" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
+            <button class="button secondary view-project-details" data-project="playsprint">View Details</button>
           </article>
           <article class="project-card project-featured">
             <p class="project-tag">Finance App</p>
@@ -463,6 +720,7 @@
               <li>SMS parsing, budget tracking, dark mode, category charts</li>
               <li><a href="https://github.com/Anishvish/PulseSpend" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
+            <button class="button secondary view-project-details" data-project="pulsespend">View Details</button>
           </article>
           <article class="project-card">
             <p class="project-tag">Productivity App</p>
@@ -473,6 +731,7 @@
               <li>Pomodoro timer, pedometer, expense charts, theming</li>
               <li><a href="https://github.com/Anishvish/Aura-App---Productivity-Health-and-Expense-Tracker" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
+            <button class="button secondary view-project-details" data-project="aura-app">View Details</button>
           </article>
           <article class="project-card">
             <p class="project-tag">Business Utility</p>
@@ -483,6 +742,7 @@
               <li>Invoice management, payment tracking, PDF sharing</li>
               <li><a href="https://github.com/Anishvish/InteriorInvoice-App" target="_blank" rel="noreferrer">View Repository</a></li>
             </ul>
+            <button class="button secondary view-project-details" data-project="interiorinvoice">View Details</button>
           </article>
         </div>
       </section>
@@ -1182,7 +1442,588 @@
   // AUTO COPYRIGHT YEAR
   // ═══════════════════════════════════════════════
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+  // ═══════════════════════════════════════════════
+  // TECH FILTER BAR
+  // ═══════════════════════════════════════════════
+  (function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const logoCards = document.querySelectorAll('.logo-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filterVal = btn.dataset.filter;
+        
+        logoCards.forEach(card => {
+          if (filterVal === 'all' || card.dataset.category === filterVal) {
+            card.classList.remove('hidden-card');
+          } else {
+            card.classList.add('hidden-card');
+          }
+        });
+      });
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // API SANDBOX TERMINAL
+  // ═══════════════════════════════════════════════
+  (function () {
+    const input = document.getElementById('sandbox-input');
+    const body = document.getElementById('sandbox-body');
+    const actionBtns = document.querySelectorAll('.terminal-action-btn');
+    
+    if (!input || !body) return;
+    
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cmd = btn.dataset.cmd;
+        if (cmd === 'clear') {
+          clearTerminal();
+        } else {
+          executeCommand(cmd);
+        }
+      });
+    });
+    
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = input.value.trim();
+        if (cmd) {
+          executeCommand(cmd);
+          input.value = '';
+        }
+      }
+    });
+    
+    function clearTerminal() {
+      const promptLine = body.querySelector('.terminal-input-line');
+      body.innerHTML = '';
+      body.appendChild(promptLine);
+      const output = document.createElement('p');
+      output.className = 'terminal-output';
+      output.textContent = 'Terminal cleared. Type "help" for options.';
+      body.insertBefore(output, promptLine);
+    }
+    
+    function appendOutput(text, className = '') {
+      const promptLine = body.querySelector('.terminal-input-line');
+      const p = document.createElement('p');
+      p.className = 'terminal-output ' + className;
+      p.innerHTML = text;
+      body.insertBefore(p, promptLine);
+      body.scrollTop = body.scrollHeight;
+    }
+    
+    const KB = {
+      skills: {
+        status: "success",
+        data: {
+          languages: ["Java 8/11/17", "SQL", "JavaScript", "HTML5", "CSS3"],
+          frameworks: ["Spring Boot", "Spring Cloud", "J2EE", "Hibernate"],
+          cloud: {
+            provider: "Google Cloud Platform",
+            services: ["GKE", "Cloud Run", "App Engine", "Compute Engine", "Pub/Sub", "Dataflow", "BigQuery", "Firestore"]
+          },
+          dataProcessing: ["Apache Beam", "Dataflow"],
+          devops: ["Docker", "Kubernetes", "Jenkins", "Maven", "CI/CD"]
+        }
+      },
+      experience: {
+        status: "success",
+        data: [
+          {
+            company: "Bristlecone",
+            role: "Senior Software Engineer / Consultant",
+            period: "Aug 2021 - Present",
+            description: "Designed Spring Boot microservices, Apache Beam pipelines on Dataflow, event-driven messaging using Cloud Pub/Sub, and GKE orchestration."
+          },
+          {
+            company: "Autosense Private Limited",
+            role: "Software Engineer / Intern",
+            period: "Jul 2019 - Aug 2021",
+            description: "Built Spring Boot microservices on GCP serverless (Cloud Run, App Engine) with Bigtable storage."
+          }
+        ]
+      },
+      projects: {
+        status: "success",
+        data: [
+          { name: "AI Invoice Estimation Generator", tech: "Java 17, Spring Boot, PostgreSQL, React Native", desc: "AI-assisted measurement parsing & GST billing." },
+          { name: "PlaySprint", tech: "React, TypeScript, HTML5 Canvas", desc: "Browser-based 2D arcade games engine." },
+          { name: "PulseSpend", tech: "React Native, Expo, SQLite", desc: "Personal spend tracker with SMS auto-detection." },
+          { name: "Aura App", tech: "React Native, SQLite, Lottie", desc: "Productivity widget, health pedometer, and timers." },
+          { name: "InteriorInvoice", tech: "React Native, TypeScript, Zustand", desc: "Offline-first mobile billing and PDF sharing." }
+        ]
+      },
+      contact: {
+        status: "success",
+        email: "anishvish5@gmail.com",
+        linkedin: "https://www.linkedin.com/in/anishvish",
+        github: "https://github.com/Anishvish",
+        booking: "https://calendar.app.google/bf5AxWXvRfhnUFc2A"
+      }
+    };
+    
+    function executeCommand(cmd) {
+      appendOutput(`<span class="terminal-prompt">guest@anishvish.dev:~$</span> ${cmd}`);
+      const cleanCmd = cmd.toLowerCase().trim();
+      
+      if (cleanCmd === 'help') {
+        appendOutput(`Available commands:
+  - <span class="highlight-cmd">help</span>: Show this help menu
+  - <span class="highlight-cmd">curl skills</span>: Get tech stack & competencies
+  - <span class="highlight-cmd">curl experience</span>: Get professional career summary
+  - <span class="highlight-cmd">curl projects</span>: Get detailed portfolio projects
+  - <span class="highlight-cmd">curl contact</span>: Get contact email, LinkedIn, and GitHub links
+  - <span class="highlight-cmd">java -jar anishvish.jar</span>: Spin up mock server instance
+  - <span class="highlight-cmd">clear</span>: Clear terminal console`);
+        return;
+      }
+      
+      if (cleanCmd.includes('curl')) {
+        let endpoint = cleanCmd.replace('curl', '').trim();
+        endpoint = endpoint.replace('https://anishvish.dev/api/v1/', '');
+        
+        if (endpoint === 'skills') {
+          appendOutput(`HTTP/1.1 200 OK
+<span class="terminal-output header">Content-Type: application/json
+Server: Spring-Boot/3.2.0</span>`, 'header');
+          appendOutput(JSON.stringify(KB.skills, null, 2), 'json');
+          return;
+        }
+        if (endpoint === 'experience') {
+          appendOutput(`HTTP/1.1 200 OK
+<span class="terminal-output header">Content-Type: application/json
+Server: Spring-Boot/3.2.0</span>`, 'header');
+          appendOutput(JSON.stringify(KB.experience, null, 2), 'json');
+          return;
+        }
+        if (endpoint === 'projects') {
+          appendOutput(`HTTP/1.1 200 OK
+<span class="terminal-output header">Content-Type: application/json
+Server: Spring-Boot/3.2.0</span>`, 'header');
+          appendOutput(JSON.stringify(KB.projects, null, 2), 'json');
+          return;
+        }
+        if (endpoint === 'contact') {
+          appendOutput(`HTTP/1.1 200 OK
+<span class="terminal-output header">Content-Type: application/json
+Server: Spring-Boot/3.2.0</span>`, 'header');
+          appendOutput(JSON.stringify(KB.contact, null, 2), 'json');
+          return;
+        }
+        
+        appendOutput(`curl: (3) URL using bad/illegal format or missing URL`, 'error');
+        return;
+      }
+      
+      if (cleanCmd === 'java -jar anishvish.jar') {
+        appendOutput('Initializing Spring Boot application instance...');
+        let steps = [
+          'Loading application properties...',
+          'Creating JPA EntityManagerFactory for database...',
+          'Starting Embedded Tomcat server on port 8080...',
+          '=========================================\n' +
+          '   __  __ _ _      _           _     _\n' +
+          '  /\\\\ / ___\'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\\n' +
+          ' ( ( )\\___ | \'_ | \'_| | \'_ \\/ _` | \\ \\ \\ \\\n' +
+          '  \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )\n' +
+          '   \'  |____| .__|_| |_|_| |_\\__, | / / / /\n' +
+          '  =========|_|==============|___/=/_/_/_/\n' +
+          ' Started ProfileServerApplication in 0.85s!\n' +
+          '=========================================',
+          'Mapping resource endpoints...\n- GET /api/v1/skills\n- GET /api/v1/experience\n- GET /api/v1/projects\n- GET /api/v1/contact',
+          'System is up & running. Connection established.'
+        ];
+        
+        let stepIdx = 0;
+        function runStep() {
+          if (stepIdx < steps.length) {
+            appendOutput(steps[stepIdx], stepIdx === 3 ? 'success' : 'info');
+            stepIdx++;
+            setTimeout(runStep, 250);
+          }
+        }
+        setTimeout(runStep, 100);
+        return;
+      }
+      
+      appendOutput(`bash: command not found: ${cmd}. Type <span class="highlight-cmd">help</span> for a list of commands.`, 'error');
+    }
+  })();
+
+  // ═══════════════════════════════════════════════
+  // GCP DATA PIPELINE SIMULATOR
+  // ═══════════════════════════════════════════════
+  (function () {
+    const triggerBtn = document.getElementById('trigger-pipeline-btn');
+    const logBody = document.getElementById('pipeline-log-body');
+    
+    if (!triggerBtn || !logBody) return;
+    
+    let isPipelineRunning = false;
+    
+    triggerBtn.addEventListener('click', () => {
+      if (isPipelineRunning) return;
+      isPipelineRunning = true;
+      triggerBtn.disabled = true;
+      triggerBtn.textContent = 'Pipeline Running...';
+      
+      logBody.innerHTML = '';
+      addLog('[System] Pipeline triggered by manual event ingestion.', 'system');
+      
+      const client = document.getElementById('node-client');
+      const pubsub = document.getElementById('node-pubsub');
+      const dataflow = document.getElementById('node-dataflow');
+      const bigquery = document.getElementById('node-bigquery');
+      
+      const packet1 = document.getElementById('packet-1');
+      const packet2 = document.getElementById('packet-2');
+      const packet3 = document.getElementById('packet-3');
+      
+      client.classList.add('active');
+      client.querySelector('.node-status').textContent = 'Active';
+      addLog('[Client] Assembled onboarding event payload for User_8923.', 'client');
+      
+      setTimeout(() => {
+        packet1.classList.add('animate');
+        addLog('[Client] Publishing JSON payload to Pub/Sub endpoint...', 'client');
+        
+        setTimeout(() => {
+          client.classList.remove('active');
+          client.querySelector('.node-status').textContent = 'Idle';
+          pubsub.classList.add('active');
+          pubsub.querySelector('.node-status').textContent = 'Ingesting';
+          addLog('[Pub/Sub] Event published to topic "employee-onboarding" (ID: 5912401).', 'pubsub');
+          
+          setTimeout(() => {
+            packet2.classList.add('animate');
+            addLog('[Pub/Sub] Acknowledged. Streaming message payload to Dataflow subscription...', 'pubsub');
+            
+            setTimeout(() => {
+              pubsub.classList.remove('active');
+              pubsub.querySelector('.node-status').textContent = 'Ready';
+              dataflow.classList.add('active');
+              dataflow.querySelector('.node-status').textContent = 'Processing';
+              addLog('[Dataflow] Dataflow stream runner executing Apache Beam job step.', 'dataflow');
+              addLog('[Dataflow] Transformation: Parsed raw JSON, validated fields, windowed events.', 'dataflow');
+              
+              setTimeout(() => {
+                packet3.classList.add('animate');
+                addLog('[Dataflow] MapElements & Windowing complete. Writing records to Cloud Storage/BigQuery sink...', 'dataflow');
+                
+                setTimeout(() => {
+                  dataflow.classList.remove('active');
+                  dataflow.querySelector('.node-status').textContent = 'Ready';
+                  bigquery.classList.add('active');
+                  bigquery.querySelector('.node-status').textContent = 'Writing';
+                  addLog('[BigQuery] Successfully inserted onboarding records into database.', 'bigquery');
+                  addLog('[BigQuery] Sink execution summary: 1 row appended, 0 errors.', 'bigquery');
+                  
+                  setTimeout(() => {
+                    bigquery.classList.remove('active');
+                    bigquery.querySelector('.node-status').textContent = 'Ready';
+                    addLog('[System] Ingestion pipeline execution completed successfully.', 'system');
+                    
+                    packet1.classList.remove('animate');
+                    packet2.classList.remove('animate');
+                    packet3.classList.remove('animate');
+                    
+                    triggerBtn.disabled = false;
+                    triggerBtn.textContent = '🚀 Publish Ingestion Event';
+                    isPipelineRunning = false;
+                  }, 800);
+                }, 800);
+              }, 800);
+            }, 800);
+          }, 800);
+        }, 800);
+      }, 500);
+    });
+    
+    function addLog(message, type = '') {
+      const p = document.createElement('p');
+      const now = new Date();
+      const timeStr = now.toTimeString().split(' ')[0];
+      p.className = 'log-line ' + type;
+      p.textContent = `[${timeStr}] ${message}`;
+      logBody.appendChild(p);
+      logBody.scrollTop = logBody.scrollHeight;
+    }
+  })();
+
+  // ═══════════════════════════════════════════════
+  // PROJECTS DETAIL MODAL
+  // ═══════════════════════════════════════════════
+  (function () {
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.getElementById('modal-close');
+    const overlay = document.getElementById('modal-overlay');
+    
+    if (!modal || !modalContent) return;
+    
+    const projectsData = {
+      'ai-invoice': {
+        tag: 'AI Application / Backend',
+        title: 'AI Invoice Estimation Generator',
+        desc: 'A production-ready MVP application for interior designers. It provides an automated, AI-assisted approach to extracting wall dimensions, parsing materials, computing costs, and formatting them into compliant client estimates and invoices.',
+        challenge: 'Interior designers often spend hours reading sketches or manual lists to calculate walls, ceilings, and materials. We built a tool that takes a free-form list of dimensions, auto-detects components via AI parsing, and maps them into dynamic pricing matrices.',
+        metrics: [
+          { emoji: '⏱️', val: '< 2 seconds', desc: 'Average AI dimension parsing latency' },
+          { emoji: '🧾', val: '100% compliant', desc: 'GST/IGST calculations support' },
+          { emoji: '📁', val: 'PDF download', desc: 'Automated sharing & generation' }
+        ],
+        tech: ['Java 17', 'Spring Boot', 'Spring AI', 'PostgreSQL', 'React Native', 'Zustand', 'PDFBox'],
+        github: 'https://github.com/Anishvish/ai-invoice-estimation-generator'
+      },
+      'playsprint': {
+        tag: 'Game Platform / Frontend',
+        title: 'PlaySprint Arcade Launcher',
+        desc: 'An interactive arcade engine and platform built to play canvas-rendered 2D shooter and dodge games. Includes high-performance game loops and physics directly rendered in the browser.',
+        challenge: 'Optimizing high-frequency canvas drawing while keeping React UI responsive. We developed a custom canvas lifecycle component that handles raw tick-based physics updates independently of React re-renders.',
+        metrics: [
+          { emoji: '⚡', val: '60 FPS', desc: 'Silky smooth game rendering loops' },
+          { emoji: '🎮', val: '2 Arcade Games', desc: 'Lane Dash & Bullet Storm built-in' },
+          { emoji: '💾', val: 'Local storage', desc: 'Offline persistent high scores' }
+        ],
+        tech: ['React', 'TypeScript', 'Vite', 'HTML5 Canvas', 'CSS Keyframes', 'Framer Motion'],
+        github: 'https://github.com/Anishvish/PlaySprint'
+      },
+      'pulsespend': {
+        tag: 'Finance / Mobile App',
+        title: 'PulseSpend Expense Tracker',
+        desc: 'A smart offline-first mobile finance dashboard that reads incoming transactional SMS alerts from banks, auto-categorizes them, and reports daily and monthly analytics.',
+        challenge: 'Safely and securely parsing bank notifications in the background on mobile devices without relying on third-party API services, ensuring absolute user privacy.',
+        metrics: [
+          { emoji: '🔍', val: 'Background reader', desc: 'SMS auto-detection service' },
+          { emoji: '🛡️', val: '100% Offline', desc: 'Secure local SQLite database' },
+          { emoji: '📊', val: 'Interactive Charts', desc: 'Spend category visualizations' }
+        ],
+        tech: ['React Native', 'Expo', 'TypeScript', 'SQLite', 'React Native SVG Charts'],
+        github: 'https://github.com/Anishvish/PulseSpend'
+      },
+      'aura-app': {
+        tag: 'Productivity / Health',
+        title: 'Aura Productivity App',
+        desc: 'A holistic wellness and productivity mobile assistant. Combines pomodoro timers, active step tracking (pedometer), daily habit checks, and expense trackers into a single space.',
+        challenge: 'Maintaining pedometer background sensor listeners without draining the mobile battery, and designing a lightweight local state store.',
+        metrics: [
+          { emoji: '🔋', val: '< 2% battery', desc: 'Minimal background sensor drain' },
+          { emoji: '⏳', val: 'Pomodoro Timer', desc: 'Configurable task workflows' },
+          { emoji: '🏃', val: 'Active tracking', desc: 'Real-time daily step counts' }
+        ],
+        tech: ['React Native', 'Expo SDK 54', 'SQLite', 'Lottie Animations', 'Zustand'],
+        github: 'https://github.com/Anishvish/Aura-App---Productivity-Health-and-Expense-Tracker'
+      },
+      'interiorinvoice': {
+        tag: 'Business Utility / Mobile',
+        title: 'InteriorInvoice contractor billing',
+        desc: 'A mobile billing app designed specifically for architectural contractors and builders to issue invoices, generate PDFs, and track client payments on the field.',
+        challenge: 'Generating high-fidelity business PDF documents on a mobile device offline and supporting instant export via chat clients.',
+        metrics: [
+          { emoji: '💵', val: 'GST Billing', desc: 'Configurable taxes and discounts' },
+          { emoji: '📱', val: 'PDF sharing', desc: 'Send estimates directly via WhatsApp' },
+          { emoji: '📦', val: 'Zustand', desc: 'Lightweight offline state' }
+        ],
+        tech: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Expo Mail & Print'],
+        github: 'https://github.com/Anishvish/InteriorInvoice-App'
+      }
+    };
+    
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.view-project-details');
+      if (btn) {
+        const pid = btn.dataset.project;
+        const data = projectsData[pid];
+        if (data) {
+          openModal(data);
+        }
+      }
+    });
+    
+    function openModal(data) {
+      modalContent.innerHTML = `
+        <div class="modal-project-header">
+          <span class="modal-project-tag">${data.tag}</span>
+          <h3 class="modal-project-title">${data.title}</h3>
+        </div>
+        <div class="modal-project-details-grid">
+          <div class="modal-details-left">
+            <div>
+              <h4 class="modal-section-title">📌 Project Overview</h4>
+              <p class="modal-text">${data.desc}</p>
+            </div>
+            <div>
+              <h4 class="modal-section-title">🛠️ The Technical Challenge</h4>
+              <p class="modal-text">${data.challenge}</p>
+            </div>
+            <div>
+              <h4 class="modal-section-title">🚀 Core Technologies</h4>
+              <div class="modal-tech-list">
+                ${data.tech.map(t => `<span class="modal-tech-chip">${t}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+          <div class="modal-details-right">
+            <h4 class="modal-section-title">📊 Impact Metrics</h4>
+            <div class="modal-metrics-list">
+              ${data.metrics.map(m => `
+                <div class="modal-metric-item">
+                   <span class="metric-emoji">${m.emoji}</span>
+                   <div class="metric-text">
+                     <strong>${m.val}</strong>
+                     <span>${m.desc}</span>
+                   </div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="modal-project-links">
+              <a href="${data.github}" target="_blank" rel="noreferrer" class="button primary" style="width:100%;">View GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+      `;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  })();
+
+  // ═══════════════════════════════════════════════
+  // RECRUITER SCAN MODE & PRINT RESUME (PHASE 2)
+  // ═══════════════════════════════════════════════
+  (function () {
+    const toggleBtn = document.getElementById('recruiter-mode-toggle');
+    const printBtn = document.getElementById('print-resume-btn');
+    
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const isActive = document.body.classList.toggle('recruiter-mode-active');
+        toggleBtn.classList.toggle('active', isActive);
+        toggleBtn.textContent = isActive ? '✅ Scan Mode Active' : 'Toggle Scan Mode';
+      });
+    }
+    
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+  })();
+
+  // ═══════════════════════════════════════════════
+  // SYSTEM PERFORMANCE MONITOR SIMULATOR (PHASE 2)
+  // ═══════════════════════════════════════════════
+  (function () {
+    const uptimeVal = document.getElementById('sys-uptime');
+    const cpuVal = document.getElementById('sys-cpu');
+    const latencyVal = document.getElementById('sys-latency');
+    const chartPath = document.getElementById('sys-chart-path');
+    const chartArea = document.getElementById('sys-chart-area');
+    
+    if (!uptimeVal) return;
+    
+    // 1. Uptime Clock (Count-up)
+    const startTime = Date.now() - (3600 * 2 + 180 * 2) * 1000; // Simulated uptime starting ~2.1 hours ago
+    function updateUptime() {
+      const diff = Date.now() - startTime;
+      const hours = Math.floor(diff / 3600000).toString().padStart(2, '0');
+      const mins = Math.floor((diff % 3600000) / 60000).toString().padStart(2, '0');
+      const secs = Math.floor((diff % 60000) / 1000).toString().padStart(2, '0');
+      uptimeVal.textContent = `${hours}:${mins}:${secs}`;
+    }
+    setInterval(updateUptime, 1000);
+    updateUptime();
+
+    // 2. Metrics Random Walk
+    let chartData = [10, 15, 8, 12, 18, 14, 25, 20, 15, 22, 30, 25, 20, 18, 15, 12, 10, 14, 16, 20];
+    function updateMetrics() {
+      // CPU Load Simulation
+      const cpu = (2.5 + Math.random() * 5).toFixed(1);
+      if (cpuVal) cpuVal.textContent = `${cpu}%`;
+      
+      // Latency Simulation
+      const latency = Math.floor(10 + Math.random() * 8);
+      if (latencyVal) latencyVal.textContent = `${latency}ms`;
+      
+      // Chart Simulation
+      chartData.push(Math.round(cpu * 8));
+      chartData.shift();
+      drawChart();
+    }
+    
+    function drawChart() {
+      if (!chartPath || !chartArea) return;
+      const width = 730;
+      const height = 60;
+      const step = width / (chartData.length - 1);
+      let points = [];
+      
+      for (let i = 0; i < chartData.length; i++) {
+        const x = i * step;
+        const y = height - (chartData[i] / 100 * height);
+        points.push(`${x},${y}`);
+      }
+      
+      const pathStr = `M ${points.join(' L ')}`;
+      const areaStr = `${pathStr} L ${width},${height} L 0,${height} Z`;
+      
+      chartPath.setAttribute('d', pathStr);
+      chartArea.setAttribute('d', areaStr);
+    }
+    
+    setInterval(updateMetrics, 2000);
+    updateMetrics();
+  })();
+
+  // ═══════════════════════════════════════════════
+  // SKILLS PROGRESS VIEWPORT OBSERVATION (PHASE 2)
+  // ═══════════════════════════════════════════════
+  (function () {
+    const fills = document.querySelectorAll('.skill-progress-fill');
+    if (fills.length === 0) return;
+    
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const fill = e.target;
+          fill.style.width = fill.dataset.percent + '%';
+          obs.unobserve(fill);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fills.forEach(f => obs.observe(f));
+  })();
   </script>
+
+  <!-- Detailed Project Modal Structure -->
+  <div class="project-modal" id="project-modal" aria-hidden="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-content" id="modal-content">
+        <!-- Loaded dynamically via JS -->
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
